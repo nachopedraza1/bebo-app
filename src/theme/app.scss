@@ -1,0 +1,56 @@
+nav {
+    position: relative;
+}
+
+nav .nav-link {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #77789a;
+    text-decoration: none;
+    line-height: 50px;
+    font-weight: 700;
+    z-index: 1;
+    text-align: center;
+    padding: 0 17px;
+    transition: all 0.3s;
+}
+
+nav .animation {
+    position: absolute;
+    height: 3px;
+    bottom: -18px;
+    z-index: 0;
+    background: #f1484c;
+    transition: all .5s ease 0s;
+}
+
+
+nav .start-home,
+a:nth-child(1) {
+    width: 75px;
+    left: 2px;
+}
+
+nav .start-diseños,
+a:nth-child(2) {
+    width: 90px;
+    left: 90px;
+}
+
+nav .start-blog,
+a:nth-child(3) {
+    width: 105px;
+    left: 190px;
+}
+
+nav .start-portfolio,
+a:nth-child(4) {
+    width: 120px;
+    left: 307px;
+}
+
+nav .start-contact,
+a:nth-child(5) {
+    width: 70px;
+    left: 427px;
+}
