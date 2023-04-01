@@ -26,31 +26,106 @@ nav .animation {
 
 
 nav .start-home,
-a:nth-child(1) {
+.nav-link:nth-child(1) {
     width: 75px;
     left: 2px;
 }
 
 nav .start-diseños,
-a:nth-child(2) {
+.nav-link:nth-child(2) {
     width: 90px;
     left: 90px;
 }
 
 nav .start-blog,
-a:nth-child(3) {
+.nav-link:nth-child(3) {
     width: 105px;
     left: 190px;
 }
 
 nav .start-portfolio,
-a:nth-child(4) {
+.nav-link:nth-child(4) {
     width: 120px;
     left: 307px;
 }
 
 nav .start-contact,
-a:nth-child(5) {
+.nav-link:nth-child(5) {
     width: 70px;
     left: 427px;
+}
+
+.vs-btn {
+    border: none;
+    display: inline-block;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    font-family: var(--body-font);
+    padding: 15px;
+    line-height: 1;
+    border-radius: 7px 15px 7px 15px;
+    vertical-align: middle;
+    position: relative;
+    z-index: 1;
+    -webkit-transition: color 0.4s, background-color 0.4s, border-radius 0.4s;
+    transition: color 0.4s, background-color 0.4s, border-radius 0.4s;
+}
+
+.vs-btn:before {
+    left: 0;
+    top: 0;
+    border-top: 2px solid #FF7E02;
+    border-left: 2px solid #FF7E02;
+}
+
+.vs-btn:after {
+    bottom: 0;
+    right: 0;
+    border-right: 2px solid #FF7E02;
+    border-bottom: 2px solid #FF7E02;
+}
+
+.vs-btn:after,
+.vs-btn:before {
+    content: '';
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    position: absolute;
+    background-color: #0f152a;
+    -webkit-transition: all ease 0.4s;
+    transition: all ease 0.4s;
+    border-radius: 7px;
+    z-index: -1;
+}
+
+.vs-btn:after,
+.vs-btn:before {
+    content: '';
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+    position: absolute;
+    background-color: #0f152a;
+    -webkit-transition: all ease 0.4s;
+    transition: all ease 0.4s;
+    border-radius: 7px;
+    z-index: -1;
+}
+
+.vs-btn:hover:after,
+.vs-btn:hover:before {
+    width: 30%;
+    height: 50%;
+    background-color: transparent;
+    border-color: green
+}
+
+.vs-btn:hover:before {
+    border-radius: 7px 0 0 0;
+}
+
+.vs-btn:hover:after {
+    border-radius: 0 0 7px 0;
 }

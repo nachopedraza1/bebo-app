@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 
-import { Container, Grid } from '@mui/material';
+import { Button, Container, Grid } from '@mui/material';
 import { AdvertisingSlide } from "./AdvertisingSlide";
 import { useState } from 'react';
 
@@ -26,25 +26,25 @@ export const Navbar = () => {
 
                         <Grid item>
                             <nav>
-                                {
-                                    navLinks.map(({ id, path, text, classlink }) => (
-                                        <NavLink
-                                            to={path}
-                                            key={id}
-                                            className="nav-link"
-                                            onClick={() => setActiveTab(classlink)}
-                                            style={({ isActive }) => { return { color: isActive ? "white" : "" } }}
-                                        >
-                                            {text}
-                                        </NavLink>
-                                    ))
-                                }
+                                {navLinks.map(({ id, path, text, classlink }) => (
+                                    <NavLink
+                                        to={path}
+                                        key={id}
+                                        className="nav-link"
+                                        onClick={() => setActiveTab(classlink)}
+                                        style={({ isActive }) => { return { color: isActive ? "white" : "" } }}
+                                    >
+                                        {text}
+                                    </NavLink>
+                                ))}
                                 <div className={`${activeTab} animation`}></div>
                             </nav>
                         </Grid>
 
                         <Grid item xs={2}>
-
+                            <a href="https://s3.argmu.com/index.php?pagina=crear_cuenta" className="vs-btn mt-20">
+                                Create Account
+                            </a>
                         </Grid>
                     </Grid>
                 </Container >
