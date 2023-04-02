@@ -1,12 +1,25 @@
 import { createTheme } from "@mui/material";
-import { NavLink } from 'react-router-dom';
 
 export const BeboTheme = createTheme({
     components: {
         MuiCssBaseline: {
             styleOverrides: `
-
+            
             `
+        },
+        MuiButton: {
+            styleOverrides: {
+                root: {
+                    textTransform: "uppercase",
+                    fontSize: "12px",
+                    lineHeight: "0px",
+                    fontFamily: "Aldrich",
+                    padding: "10px",
+                    color: "white",
+                    borderRadius: "3px",
+                    "&:hover": { backgroundColor: "#0000003a", color: "#f1484c" }
+                }
+            }
         },
     }
 });

@@ -3,12 +3,12 @@ nav {
 }
 
 nav .nav-link {
-    font-size: 15px;
-    text-transform: uppercase;
+    font-size: 14px;
     color: #77789a;
     text-decoration: none;
     line-height: 50px;
-    font-weight: 700;
+    font-family: Aldrich;
+    text-transform: uppercase;
     z-index: 1;
     text-align: center;
     padding: 0 17px;
@@ -17,75 +17,65 @@ nav .nav-link {
 
 nav .animation {
     position: absolute;
-    height: 3px;
-    bottom: -18px;
+    height: 2px;
+    bottom: -13px;
     z-index: 0;
     background: #f1484c;
+    box-shadow: 0px -5px 15px rgba(241, 72, 76, 0.8);
     transition: all .5s ease 0s;
 }
 
 
 nav .start-home,
 .nav-link:nth-child(1) {
-    width: 75px;
-    left: 2px;
+    width: 70px;
+    left: 5px;
 }
 
 nav .start-diseños,
 .nav-link:nth-child(2) {
-    width: 90px;
-    left: 90px;
+    width: 80px;
+    left: 88px;
 }
 
 nav .start-blog,
 .nav-link:nth-child(3) {
-    width: 105px;
-    left: 190px;
+    width: 95px;
+    left: 185px;
 }
 
 nav .start-portfolio,
 .nav-link:nth-child(4) {
-    width: 120px;
-    left: 307px;
+    width: 105px;
+    left: 295px;
 }
 
 nav .start-contact,
 .nav-link:nth-child(5) {
-    width: 70px;
-    left: 427px;
+    width: 60px;
+    left: 410px;
 }
 
 .vs-btn {
     border: none;
-    display: inline-block;
-    background-color: black;
-    color: white;
-    font-size: 16px;
-    font-weight: 600;
     text-decoration: none;
-    font-family: var(--body-font);
-    padding: 15px;
-    line-height: 1;
-    border-radius: 7px 15px 7px 15px;
     vertical-align: middle;
-    position: relative;
     z-index: 1;
-    -webkit-transition: color 0.4s, background-color 0.4s, border-radius 0.4s;
-    transition: color 0.4s, background-color 0.4s, border-radius 0.4s;
+    box-shadow: 0px 0px 10px rgba(241, 72, 76, 0.6);
 }
 
 .vs-btn:before {
     left: 0;
     top: 0;
-    border-top: 2px solid #FF7E02;
-    border-left: 2px solid #FF7E02;
+    border-top: 1px solid #f1484c;
+    border-left: 1px solid #f1484c;
 }
 
 .vs-btn:after {
     bottom: 0;
     right: 0;
-    border-right: 2px solid #FF7E02;
-    border-bottom: 2px solid #FF7E02;
+    border-right: 1px solid #f1484c;
+    border-bottom: 1px solid #f1484c;
 }
 
 .vs-btn:after,
@@ -94,10 +84,9 @@ nav .start-contact,
     width: calc(100% - 2px);
     height: calc(100% - 2px);
     position: absolute;
-    background-color: #0f152a;
     -webkit-transition: all ease 0.4s;
     transition: all ease 0.4s;
-    border-radius: 7px;
+    border-radius: 4px;
     z-index: -1;
 }
 
@@ -107,10 +96,10 @@ nav .start-contact,
     width: calc(100% - 2px);
     height: calc(100% - 2px);
     position: absolute;
-    background-color: #0f152a;
+    background-color: transparent;
     -webkit-transition: all ease 0.4s;
     transition: all ease 0.4s;
-    border-radius: 7px;
+    border-radius: px;
     z-index: -1;
 }
 
@@ -119,13 +108,13 @@ nav .start-contact,
     width: 30%;
     height: 50%;
     background-color: transparent;
-    border-color: green
+    border-color: #f1484c;
 }
 
 .vs-btn:hover:before {
-    border-radius: 7px 0 0 0;
+    border-radius: 3px 0 0 0;
 }
 
 .vs-btn:hover:after {
-    border-radius: 0 0 7px 0;
+    border-radius: 0 0 3px 0;
 }
