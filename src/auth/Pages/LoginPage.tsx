@@ -1,16 +1,14 @@
-import { Google } from "@mui/icons-material"
-import { Button, Grid, Typography } from "@mui/material"
-import { googleLogin } from "../Providers/Providers"
 import { useCustomDispatch } from "../../hooks/useRedux"
 import { startLogin } from "../../redux/thuks"
+
+import { Google } from "@mui/icons-material"
+import { Button, Grid, Typography } from "@mui/material"
 
 export const LoginPage: React.FC = () => {
 
     const dispatch = useCustomDispatch();
 
-    const startLoginRest = () => {
-        dispatch(startLogin())
-    }
+    const onLogin = () => dispatch(startLogin());
 
     return (
         <Grid
@@ -24,7 +22,7 @@ export const LoginPage: React.FC = () => {
             <Grid item textAlign="center">
                 <Typography variant="h6" color="white"> ADMIN PANEL </Typography>
                 <Button className="vs-btn" variant="text" endIcon={<Google />}
-                    onClick={() => startLoginRest()}>
+                    onClick={onLogin}>
                     INGRESAR CON GOOGLE
                 </Button>
             </Grid>

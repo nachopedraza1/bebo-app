@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { Button, Container, Grid } from '@mui/material';
 import { AdvertisingSlide } from "./AdvertisingSlide";
 import { useState } from 'react';
-import { WhatsApp, Telegram } from '@mui/icons-material';
+import { WhatsApp } from '@mui/icons-material';
 import { SelectLang } from '../Main/components';
 
 const navLinks = [

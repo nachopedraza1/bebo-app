@@ -3,7 +3,7 @@ import { FirebaseAuth } from "../../Firebase/config";
 
 const googleProvider = new GoogleAuthProvider();
 
-export const googleLogin = async () => {
+export const onGoogleLogin = async () => {
     try {
         const resp = await signInWithPopup(FirebaseAuth, googleProvider);
         const { uid, displayName, email, photoURL } = resp.user;
@@ -11,4 +11,8 @@ export const googleLogin = async () => {
     } catch (error: any) {
         return { ok: false, errorMessage: error.message }
     }
+}
+
+export const logoutUser = async () => {
+    return await FirebaseAuth.signOut();
 }
