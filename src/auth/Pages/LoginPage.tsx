@@ -25,6 +25,7 @@ export const LoginPage: React.FC = () => {
                     onClick={onLogin}>
                     INGRESAR CON GOOGLE
                 </Button>
+
             </Grid>
         </Grid>
     )

@@ -1,8 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
 
+import { useCheckAuth } from '../hooks/useCheckAuth';
 import { MainRoutes } from '../Main/routes/MainRoutes';
 import { AuthRoutes } from '../auth/routes/AuthRoutes';
-import { useCheckAuth } from '../hooks/useCheckAuth';
 
 export const AppRouter: React.FC = () => {
 
