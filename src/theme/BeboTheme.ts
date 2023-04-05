@@ -2,11 +2,6 @@ import { createTheme } from "@mui/material";
 
 export const BeboTheme = createTheme({
     components: {
-        MuiCssBaseline: {
-            styleOverrides: `
-            
-            `
-        },
         MuiButton: {
             styleOverrides: {
                 root: {
@@ -21,5 +16,12 @@ export const BeboTheme = createTheme({
                 }
             }
         },
+    },
+    typography: {
+        h6: {
+            fontFamily: "Aldrich"
+
+        }
     }
+
 });

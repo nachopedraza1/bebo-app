@@ -14,20 +14,22 @@ export const AdvertisingSlide = () => {
         infinite: true,
         speed: 500,
         slidesToShow: 1,
-        slidesToScroll: 1
+        slidesToScroll: 1,
     };
 
     return (
-        <Slider {...settings}>
-            {slides.map(({ imgUrl }) => (
-                <Grid container sx={{
-                    width: "100%",
-                    minHeight: "88px",
-                    background: `url(${imgUrl})`,
-                    backgroundPosition: "center",
-                }}>
-                </Grid>
-            ))}
-        </Slider >
+        <div>
+            <Slider {...settings}>
+                {slides.map(({ imgUrl }) => (
+                    <Grid container key={imgUrl} sx={{
+                        width: "100%",
+                        minHeight: "88px",
+                        background: `url(${imgUrl})`,
+                        backgroundPosition: "center",
+                    }}>
+                    </Grid>
+                ))}
+            </Slider >
+        </div>
     )
 }

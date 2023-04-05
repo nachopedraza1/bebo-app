@@ -4,19 +4,20 @@ import { Button, Container, Grid } from '@mui/material';
 import { AdvertisingSlide } from "./AdvertisingSlide";
 import { useState } from 'react';
 import { WhatsApp, Telegram } from '@mui/icons-material';
-import { SelectLang } from '../components';
+import { SelectLang } from '../Main/components';
 
 const navLinks = [
     { id: 1, text: "inicio", path: "/", classlink: "start-home" },
-    { id: 2, text: "diseños", path: "/diseños", classlink: "start-diseños" },
-    { id: 3, text: "clientes", path: "/clientes", classlink: "start-blog" },
-    { id: 4, text: "asociados", path: "/asociados", classlink: "start-portfolio" },
+    { id: 2, text: "diseños", path: "/design", classlink: "start-diseños" },
+    { id: 3, text: "clientes", path: "/clients", classlink: "start-blog" },
+    { id: 4, text: "asociados", path: "/partners", classlink: "start-portfolio" },
     { id: 5, text: "faq", path: "/faq", classlink: "start-contact" },
 ];
 
 
 export const Navbar = () => {
     const [activeTab, setActiveTab] = useState<string>("start-home");
+
     return (
         <>
             <Grid bgcolor="#0f152a" p={1}>
@@ -47,7 +48,7 @@ export const Navbar = () => {
                             <Grid container alignItems="center" gap={3} >
                                 <SelectLang />
 
-                                <Button className='vs-btn' variant='text' startIcon={<Telegram />}>
+                                <Button className='vs-btn' variant='text' startIcon={<WhatsApp />}>
                                     Contactanos!
                                 </Button>
                             </Grid>

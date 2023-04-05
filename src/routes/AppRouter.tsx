@@ -1,15 +1,25 @@
-import { Navigate, Route, Routes } from 'react-router-dom';
-import { HomePage } from '../pages';
-import { Navbar } from '../ui/Navbar';
+import { Route, Routes } from 'react-router-dom';
+
+import { MainRoutes } from '../Main/routes/MainRoutes';
+import { AuthRoutes } from '../auth/routes/AuthRoutes';
 
 export const AppRouter: React.FC = () => {
+
+    const status = "autenticado";
+
     return (
-        <>
-            <Navbar />
-            <Routes>
-                <Route path='/' element={<HomePage />} />
-               {/*  <Route path='/*' element={<Navigate to='/' />} /> */}
-            </Routes>
-        </>
+        <Routes>
+            {
+                status === "autenticado" ?
+                    <>
+                        <Route path="/auth/*" element={<AuthRoutes />} />
+                        <Route path="/*" element={<MainRoutes />} />
+                    </>
+                    :
+                    <>
+                        <Route path="/*" element={<MainRoutes />} />
+                    </>
+            }
+        </Routes >
     )
 }
