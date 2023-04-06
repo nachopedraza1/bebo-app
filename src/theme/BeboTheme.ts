@@ -20,7 +20,7 @@ export const BeboTheme = createTheme({
     typography: {
         subtitle1: {
             fontFamily: "Roboto",
-            fontWeight: "lighter"
+            fontWeight: 400
         },
         h6: {
             fontFamily: "Aldrich"

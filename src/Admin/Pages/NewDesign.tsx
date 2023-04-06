@@ -1,26 +1,35 @@
-import { Grid, TextField, Typography, Divider, InputLabel, Select, MenuItem, FormControl, InputAdornment, Button } from '@mui/material';
+import { FormEvent, useState } from 'react';
+
 import { useForm } from '../../hooks';;
+import { Preview, SelectCategory, SelectDate, UploadImage } from '../Components';
 
-import { AttachMoney, CreateOutlined, PhotoCamera } from '@mui/icons-material';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import { useRef } from 'react';
-
+import { Grid, TextField, Typography, Divider, InputAdornment, Button } from '@mui/material';
+import { AttachMoney, CloudUpload, CreateOutlined, Visibility } from '@mui/icons-material';
+import { addDoc, collection, doc, setDoc } from 'firebase/firestore/lite';
+import { FirebaseDB } from '../../Firebase/config';
 
 const initialState = {
     title: "",
     date: "",
     price: "",
     category: "",
-    imageURL: "",
 }
 
 export const NewDesign: React.FC = () => {
 
-    const { onSubmit, title, price, category, onInputchange, onDateChange, uploadImg } = useForm(initialState);
+    const { formData, category, uploadFile, title, price, onInputchange, onDateChange } = useForm(initialState);
 
-    const fileInput: any = useRef();
+    const [previewImg, setPreviewImg] = useState<string>("");
+    const [selectedImg, setSelectedImg] = useState<string>("");
+    const [uploadImg, setUploadImg] = useState<File | null>(null);
+
+    const onSubmit = async (e: FormEvent) => {
+        e.preventDefault();
+        const imgUrl = await uploadFile(uploadImg);
+        console.log({ ...formData, imgUrl });
+        const queryRef = collection(FirebaseDB, "designs");
+        await addDoc(queryRef, { ...formData, imgUrl });
+    }
 
     return (
         <form onSubmit={onSubmit}>
@@ -28,12 +37,18 @@ export const NewDesign: React.FC = () => {
 
                 <Grid container spacing={4}>
                     <Grid item xs={7}>
-                        <Typography variant='subtitle1' fontSize={30}> Cargar nuevo Diseño </Typography>
+                        <Grid container alignItems="center" gap={1}>
+                            <Typography variant='subtitle1' fontSize={30}> Cargar nuevo Diseño </Typography>
+                            <CloudUpload fontSize='large' />
+                        </Grid>
                         < Divider />
                     </Grid>
 
                     <Grid item xs={5}>
-                        <Typography variant='subtitle1' fontSize={30}> Vista previa </Typography>
+                        <Grid container alignItems="center" gap={1}>
+                            <Typography variant='subtitle1' fontSize={30}> Vista previa </Typography>
+                            <Visibility fontSize='large' />
+                        </Grid>
                         < Divider />
                     </Grid>
                 </Grid>
@@ -43,16 +58,7 @@ export const NewDesign: React.FC = () => {
                         <Grid container spacing={2}>
 
                             <Grid item xs={12}>
-                                <Button
-                                    fullWidth
-                                    variant='contained'
-                                    onClick={() => fileInput.current.click()}
-                                    endIcon={<PhotoCamera />}
-                                    sx={{ padding: "10px" }}
-                                >
-                                    Subir imagen
-                                </Button>
-                                <input ref={fileInput} hidden accept="image/*" type="file" onChange={uploadImg} />
+                                <UploadImage selectedImg={selectedImg} setPreviewImg={setPreviewImg} setSelectedImg={setSelectedImg} setUploadImg={setUploadImg} />
                             </Grid>
 
                             <Grid item xs={6}>
@@ -75,29 +81,11 @@ export const NewDesign: React.FC = () => {
                             </Grid>
 
                             <Grid item xs={6}>
-                                <FormControl fullWidth>
-                                    <InputLabel>Categoria</InputLabel>
-                                    <Select
-                                        name='category'
-                                        value={category}
-                                        label="Categoria"
-                                        onChange={onInputchange}
-                                    >
-                                        <MenuItem value="Logos">Logos</MenuItem>
-                                        <MenuItem value="Mapas">Mapas</MenuItem>
-                                        <MenuItem value="Flyers">Flyers</MenuItem>
-                                        <MenuItem value="Templates">Templates</MenuItem>
-                                        <MenuItem value="Launchers">Launchers</MenuItem>
-                                        <MenuItem value="Select Server">Select Server</MenuItem>
-                                        <MenuItem value="Select Character">Select Character</MenuItem>
-                                    </Select>
-                                </FormControl>
+                                <SelectCategory category={category} onInputchange={onInputchange} />
                             </Grid>
 
                             <Grid item xs={6}>
-                                <LocalizationProvider dateAdapter={AdapterDayjs}>
-                                    <DatePicker onChange={(date) => onDateChange(date)} label="Fecha" sx={{ width: "100%" }} />
-                                </LocalizationProvider>
+                                <SelectDate onDateChange={onDateChange} />
                             </Grid>
 
                             <Grid item xs={6}>
@@ -130,11 +118,11 @@ export const NewDesign: React.FC = () => {
                     </Grid>
 
                     <Grid item xs={5}>
-
+                        <Preview formData={formData} selectedImg={selectedImg} previewImg={previewImg} />
                     </Grid>
                 </Grid>
 
             </Grid>
-        </form>
+        </form >
     )
 }
