@@ -18,10 +18,17 @@ export const BeboTheme = createTheme({
         },
     },
     typography: {
+        subtitle1: {
+            fontFamily: "Roboto",
+            fontWeight: "lighter"
+        },
         h6: {
             fontFamily: "Aldrich"
-
+        }
+    },
+    palette: {
+        primary: {
+            main: "#0f152a"
         }
     }
-
 });

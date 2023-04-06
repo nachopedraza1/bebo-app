@@ -1,8 +1,11 @@
 import { useEffect } from "react";
+
 import { useCustomDispatch, useCustomSelector } from "./useRedux";
+import { login, logout } from "../redux/authSlice";
+
 import { User, onAuthStateChanged } from "firebase/auth";
 import { FirebaseAuth } from "../Firebase/config";
-import { login, logout } from "../redux/authSlice";
+import { startLogout } from "../redux/thuks";
 
 export const useCheckAuth = () => {
 

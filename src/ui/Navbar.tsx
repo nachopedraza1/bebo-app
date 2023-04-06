@@ -1,10 +1,11 @@
-import { NavLink } from 'react-router-dom';
-
-import { Button, Container, Grid } from '@mui/material';
-import { AdvertisingSlide } from "./AdvertisingSlide";
 import { useState } from 'react';
-import { WhatsApp } from '@mui/icons-material';
+import { Link, NavLink } from 'react-router-dom';
+
 import { SelectLang } from '../Main/components';
+import { AdvertisingSlide } from "./AdvertisingSlide";
+
+import { Button, Container, Grid, Typography } from '@mui/material';
+import { WhatsApp } from '@mui/icons-material';
 
 const navLinks = [
     { id: 1, text: "inicio", path: "/", classlink: "start-home" },
@@ -51,6 +52,9 @@ export const Navbar = () => {
                                 <Button className='vs-btn' variant='text' startIcon={<WhatsApp />}>
                                     Contactanos!
                                 </Button>
+
+                                <Typography component={Link} to="/admincp" variant="body1" color="initial">asd</Typography>
+
                             </Grid>
                         </Grid>
 
