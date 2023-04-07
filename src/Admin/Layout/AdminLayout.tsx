@@ -1,7 +1,10 @@
 import * as React from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 
-import { AppBar, Box, Typography, Toolbar, ListItemIcon, ListItemText, IconButton, List, ListItem, ListItemButton, Divider, Drawer, } from '@mui/material';
-import { Brush, Logout, Menu, Settings } from '@mui/icons-material';
+import { AppBar, Box, Typography, Toolbar, ListItemIcon, ListItemText, IconButton, List, ListItem, ListItemButton, Divider, Drawer, Grid, } from '@mui/material';
+import { Brush, KeyboardBackspace, Logout, Menu, Settings } from '@mui/icons-material';
+import { useCustomDispatch } from '../../hooks';
+import { startLogout } from '../../redux/thuks';
 
 
 const drawerWidth = 240;
@@ -12,12 +15,17 @@ interface Props {
 }
 
 export const AdminLayout = (props: Props) => {
+
+    const dispatch = useCustomDispatch();
+
     const { window, children } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
     };
+
+    const logOut = () => dispatch(startLogout());
 
     const drawer = (
         <div>
@@ -40,7 +48,7 @@ export const AdminLayout = (props: Props) => {
             <Divider />
             <List>
                 {['Cerrar sesion'].map((text, index) => (
-                    <ListItem key={text} disablePadding>
+                    <ListItem key={text} disablePadding onClick={logOut}>
                         <ListItemButton>
                             <ListItemIcon>
                                 <Logout />
@@ -115,8 +123,16 @@ export const AdminLayout = (props: Props) => {
                 sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
             >
                 <Toolbar />
+
+                <Grid container alignItems="center" gap={1} >
+                    <KeyboardBackspace />
+                    <Typography color="inherit" component={RouterLink} to="/" zIndex={1} >
+                        Volver al inicio
+                    </Typography>
+                </Grid>
+
                 {children}
             </Box>
-        </Box>
+        </Box >
     );
 }

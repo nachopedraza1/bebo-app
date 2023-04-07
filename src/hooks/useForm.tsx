@@ -35,5 +35,6 @@ export const useForm = <T extends Object>(initialState: T) => {
         onInputchange,
         uploadFile,
         formData,
+        setFormData,
     }
 }

@@ -53,8 +53,6 @@ export const Navbar = () => {
                                     Contactanos!
                                 </Button>
 
-                                <Typography component={Link} to="/admincp" variant="body1" color="initial">asd</Typography>
-
                             </Grid>
                         </Grid>
 

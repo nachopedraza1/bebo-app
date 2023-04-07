@@ -2,8 +2,8 @@ import { AnyAction } from 'redux'
 import { ThunkAction } from 'redux-thunk'
 import { RootState } from './store';
 
-import { logoutUser, onGoogleLogin } from '../auth/Providers/Providers';
-import { checkingCredentials, login, logout } from './authSlice';
+import { logoutUser, onGoogleLogin, getPosts } from '../Providers';
+import { checkingCredentials, login, logout, loadPosts } from './slices';
 
 export const startLogin = (): ThunkAction<void, RootState, unknown, AnyAction> => {
     return async (dispatch) => {
@@ -21,4 +21,11 @@ export const startLogout = (): ThunkAction<void, RootState, unknown, AnyAction> 
     }
 }
 
+export const startLoadPost = (): ThunkAction<void, RootState, unknown, AnyAction> => {
+    return async (dispatch) => {
+        const posts = await getPosts();
+        console.log(posts);
+        dispatch(loadPosts(posts))
+    }
+}
 

@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 
-import { useCustomSelector, useCheckAuth } from '../hooks';
+import { useCheckAuth } from '../hooks';
 
 import { AdminRoutes } from '../Admin/Routes/AdminRoutes';
 import { MainRoutes } from '../Main/Router/MainRoutes';

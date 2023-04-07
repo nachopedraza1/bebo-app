@@ -21,6 +21,7 @@ export const SelectCategory: React.FC<Select> = ({ category, onInputchange }) =>
         <FormControl fullWidth>
             <InputLabel>Categoria</InputLabel>
             <Select
+                required
                 name='category'
                 value={category}
                 label="Categoria"
