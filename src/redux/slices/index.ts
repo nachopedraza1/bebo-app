@@ -1,2 +1,2 @@
-export * from "./PostSlice";
 export * from "./AuthSlice";
+export * from "./PostSlice";

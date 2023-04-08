@@ -1,17 +1,11 @@
-import { FormEvent, useState } from 'react';
-
-import { useCustomDispatch, useForm } from '../../hooks';;
-import { startLoadPost } from '../../redux/thuks';
-
-import { addDoc, collection } from 'firebase/firestore/lite';
-import { FirebaseDB } from '../../Firebase/config';
+import { useForm } from '../../hooks';;
 
 import { Preview, SelectCategory, SelectDate, UploadImage } from '../Components';
 import { Grid, TextField, Typography, Divider, InputAdornment, Button } from '@mui/material';
 import { AttachMoney, CloudUpload, CreateOutlined, Visibility } from '@mui/icons-material';
 import dayjs from 'dayjs';
 
-const initialState = {
+const formData = {
     title: "",
     date: dayjs().format('DD/MM/YYYY'),
     price: "",
@@ -20,29 +14,9 @@ const initialState = {
 
 export const NewDesign: React.FC = () => {
 
-    const dispatch = useCustomDispatch();
+    const { onSubmit, submitted, onSelectImage, formState, onInputchange, onDateChange } = useForm(formData);
 
-    const { formData, setFormData, category, uploadFile, title, price, onInputchange, onDateChange } = useForm(initialState);
-
-    const [previewImg, setPreviewImg] = useState<string>("");
-    const [selectedImg, setSelectedImg] = useState<string>("");
-    const [uploadImg, setUploadImg] = useState<File | null>(null);
-    const [submitted, setSubmitted] = useState<boolean>(false);
-
-    const onSubmit = async (e: FormEvent) => {
-        e.preventDefault();
-        setSubmitted(true)
-        try {
-            const imgUrl = await uploadFile(uploadImg);
-            const queryRef = collection(FirebaseDB, "designs");
-            await addDoc(queryRef, { ...formData, imgUrl });
-            dispatch(startLoadPost());
-            setSubmitted(false)
-            setFormData(initialState)
-        } catch (error) {
-            console.log(error);
-        }
-    }
+    const { category, price, title } = formState;
 
     return (
         <form onSubmit={onSubmit}>
@@ -71,7 +45,7 @@ export const NewDesign: React.FC = () => {
                         <Grid container spacing={2}>
 
                             <Grid item xs={12}>
-                                <UploadImage selectedImg={selectedImg} setPreviewImg={setPreviewImg} setSelectedImg={setSelectedImg} setUploadImg={setUploadImg} />
+                                <UploadImage onSelectImage={onSelectImage} />
                             </Grid>
 
                             <Grid item xs={6}>
@@ -124,7 +98,7 @@ export const NewDesign: React.FC = () => {
                             </Grid>
 
                             <Grid item xs={12} textAlign="end">
-                                <Button type='submit' disabled={submitted} variant='contained' sx={{ padding: "20px" }}>
+                                <Button disabled={submitted} type='submit' variant='contained' sx={{ padding: "20px" }}>
                                     Publicar
                                 </Button>
                             </Grid>
@@ -133,7 +107,7 @@ export const NewDesign: React.FC = () => {
                     </Grid>
 
                     <Grid item xs={5}>
-                        <Preview formData={formData} selectedImg={selectedImg} previewImg={previewImg} />
+                        <Preview formState={formState} />
                     </Grid>
                 </Grid>
 

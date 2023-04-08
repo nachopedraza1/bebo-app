@@ -1,25 +1,24 @@
 import { Divider, Grid, Typography } from '@mui/material';
 
 interface Preview {
-    formData: {
+    formState: {
         title: string,
         category: string,
         date: string,
         price: string,
     },
-    selectedImg: string,
-    previewImg: string,
 }
 
+export const Preview: React.FC<Preview> = ({ formState }) => {
 
-export const Preview: React.FC<Preview> = ({ formData, selectedImg, previewImg }) => {
+    const previewImg = localStorage.getItem("preview") || undefined;
 
-    const { category, date, price, title } = formData;
+    const { category, date, price, title } = formState;
 
     return (
         <Grid container mt={2} key={previewImg} className='animate__animated animate__fadeIn'>
-            <Grid container>
-                {selectedImg &&
+            {!!previewImg &&
+                <>
                     <Grid container spacing={1}>
                         <Grid item xs={6}>
                             <Typography > Titulo: <span style={{ fontWeight: 700, marginLeft: 5 }}>{title}</span> </Typography>
@@ -37,11 +36,12 @@ export const Preview: React.FC<Preview> = ({ formData, selectedImg, previewImg }
                             <Divider />
                         </Grid>
                     </Grid>
-                }
-            </Grid>
-            <Grid item xs={12} mt={2}>
-                {selectedImg && <img src={previewImg} width="100%" />}
-            </Grid>
-        </Grid>
+
+                    <Grid item xs={12} mt={2}>
+                        <img src={previewImg} width="100%" />
+                    </Grid>
+                </>
+            }
+        </Grid >
     )
 }

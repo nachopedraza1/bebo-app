@@ -1,24 +1,15 @@
-import { ChangeEvent, useEffect, useRef } from "react";
+import { useRef, ChangeEvent } from 'react';
 
 import { PhotoCamera } from "@mui/icons-material";
 import { Button } from "@mui/material"
 
-export const UploadImage = ({ selectedImg, setPreviewImg, setUploadImg, setSelectedImg }: any) => {
+interface Upload {
+    onSelectImage: (event: ChangeEvent<HTMLInputElement>) => void;
+}
+
+export const UploadImage: React.FC<Upload> = ({ onSelectImage }) => {
 
     const fileInput: any = useRef();
-
-    useEffect(() => {
-        if (!selectedImg) return;
-        const previewImgUrl = URL.createObjectURL(selectedImg)
-        setPreviewImg(previewImgUrl)
-        return () => URL.revokeObjectURL(previewImgUrl)
-    }, [selectedImg])
-
-    const onSelectFile = (event: ChangeEvent<HTMLInputElement>) => {
-        if (!event.target.files) return
-        setSelectedImg(event.target.files[0])
-        setUploadImg(event.target.files[0])
-    }
 
     return (
         <>
@@ -31,7 +22,7 @@ export const UploadImage = ({ selectedImg, setPreviewImg, setUploadImg, setSelec
             >
                 Subir imagen
             </Button>
-            <input ref={fileInput} hidden accept="image/*" type="file" onChange={onSelectFile} />
+            <input ref={fileInput} hidden accept="image/*" type="file" onChange={onSelectImage} />
         </>
     )
 }

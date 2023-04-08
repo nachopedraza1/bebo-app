@@ -1,40 +1,62 @@
-import { useState, ChangeEvent } from 'react';
+import { useState, ChangeEvent, FormEvent } from 'react';
+import { useCustomDispatch } from './useRedux';
 
+import { uploadImage, DisplayAlert } from '../Admin/Helpers';
+import { startLoadPost } from '../redux/thuks';
 import { Dayjs } from 'dayjs';
-import { v4 } from "uuid";
 
-import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
-import { FirebaseStorage } from "../Firebase/config";
+import { addDoc, collection } from 'firebase/firestore/lite';
+import { FirebaseDB } from "../Firebase/config";
 
 import { SelectChangeEvent } from '@mui/material';
 
 export const useForm = <T extends Object>(initialState: T) => {
 
-    const [formData, setFormData] = useState(initialState);
+    const dispatch = useCustomDispatch();
+
+    const [formState, setFormState] = useState(initialState);
+    const [imgFile, setImgFile] = useState<File | null>(null);
+    const [submitted, setSubmitted] = useState<boolean>(false);
 
     const onInputchange = (event: ChangeEvent<any> | SelectChangeEvent<any>) => {
         const { name, value } = event.target;
-        setFormData({ ...formData, [name]: value })
+        setFormState({ ...formState, [name]: value })
     }
 
     const onDateChange = (date: Dayjs) => {
-        setFormData({ ...formData, date: date.format('DD/MM/YYYY') })
+        setFormState({ ...formState, date: date.format('DD/MM/YYYY') })
     }
 
-    const uploadFile = async (imgFile: File | null) => {
-        const storageRef = ref(FirebaseStorage, v4());
-        if (!imgFile) return;
-        await uploadBytes(storageRef, imgFile)
-        const imgUrl = await getDownloadURL(storageRef);
-        return imgUrl
+    const onSelectImage = (event: ChangeEvent<HTMLInputElement>) => {
+        if (!event.target.files) return
+        const previewImgUrl = URL.createObjectURL(event.target.files[0]);
+        localStorage.setItem("preview", previewImgUrl);
+        setImgFile(event.target.files[0])
+    }
+
+    const onSubmit = async (e: FormEvent) => {
+        e.preventDefault();
+        setSubmitted(true);
+        try {
+            const imgUrl = await uploadImage(imgFile);
+            const queryRef = collection(FirebaseDB, "designs");
+            await addDoc(queryRef, { ...formState, imgUrl });
+            dispatch(startLoadPost());
+            setFormState(initialState);
+            setSubmitted(false);
+            DisplayAlert("success", "Publicado con exito.")
+        } catch (error) {
+            setSubmitted(false);
+            DisplayAlert("error", "Algo ha salido mal.")
+        }
     }
 
     return {
-        ...formData,
+        onSubmit,
+        submitted,
+        formState,
         onDateChange,
+        onSelectImage,
         onInputchange,
-        uploadFile,
-        formData,
-        setFormData,
     }
 }
