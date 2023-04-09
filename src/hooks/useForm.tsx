@@ -1,7 +1,7 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
 import { useCustomDispatch } from './useRedux';
 
-import { uploadImage, DisplayAlert } from '../Admin/Helpers';
+import { UploadImage, DisplayAlert } from '../Admin/Helpers';
 import { startLoadPost } from '../redux/thuks';
 import { Dayjs } from 'dayjs';
 
@@ -38,13 +38,14 @@ export const useForm = <T extends Object>(initialState: T) => {
         e.preventDefault();
         setSubmitted(true);
         try {
-            const imgUrl = await uploadImage(imgFile);
+            const imgUrl = await UploadImage(imgFile);
             const queryRef = collection(FirebaseDB, "designs");
             await addDoc(queryRef, { ...formState, imgUrl });
             dispatch(startLoadPost());
             setFormState(initialState);
             setSubmitted(false);
             DisplayAlert("success", "Publicado con exito.")
+            localStorage.clear();
         } catch (error) {
             setSubmitted(false);
             DisplayAlert("error", "Algo ha salido mal.")

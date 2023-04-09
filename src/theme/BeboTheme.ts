@@ -21,12 +21,17 @@ export const BeboTheme = createTheme({
         subtitle1: {
             fontFamily: "Titillium Web",
             fontWeight: 400,
-            textTransform:"uppercase"
+            textTransform: "uppercase"
         },
         h6: {
             fontFamily: "Aldrich"
         },
-        fontFamily:"Titillium Web"
+        h3: {
+            fontFamily: "Titillium Web",
+            textTransform: "uppercase",
+            fontWeight: 300
+        },
+        fontFamily: "Titillium Web"
     },
     palette: {
         primary: {

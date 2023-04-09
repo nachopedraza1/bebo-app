@@ -7,7 +7,7 @@ const slides = [
     { imgUrl: "/assets/banner3.jpg" },
 ]
 
-export const AdvertisingSlide = () => {
+export const AdvertisingSlide: React.FC = () => {
 
     const settings = {
         dots: true,

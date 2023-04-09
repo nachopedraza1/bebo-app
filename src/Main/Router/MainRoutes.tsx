@@ -4,7 +4,7 @@ import { useCustomSelector } from '../../hooks';
 import { ClientsPage, DesignsPage, FaqPage, HomePage, PartnersPage } from '../pages';
 import { Navbar } from '../../ui/Navbar';
 
-import { Grid, IconButton } from '@mui/material';
+import { Grid, IconButton, Container } from '@mui/material';
 import { Settings } from '@mui/icons-material';
 
 export const MainRoutes: React.FC = () => {
@@ -14,14 +14,16 @@ export const MainRoutes: React.FC = () => {
     return (
         <>
             <Navbar />
-            <Routes>
-                <Route path='/' element={<HomePage />} />
-                <Route path='/faq' element={<FaqPage />} />
-                <Route path='/design' element={<DesignsPage />} />
-                <Route path='/clients' element={<ClientsPage />} />
-                <Route path='/partners' element={<PartnersPage />} />
-                <Route path='/*' element={<Navigate to="/" />} />
-            </Routes>
+            <Container>
+                <Routes>
+                    <Route path='/' element={<HomePage />} />
+                    <Route path='/faq' element={<FaqPage />} />
+                    <Route path='/design' element={<DesignsPage />} />
+                    <Route path='/clients' element={<ClientsPage />} />
+                    <Route path='/partners' element={<PartnersPage />} />
+                    <Route path='/*' element={<Navigate to="/" />} />
+                </Routes>
+            </Container>
 
             {
                 status === "authenticated"
