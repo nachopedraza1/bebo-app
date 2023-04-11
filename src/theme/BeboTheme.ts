@@ -19,19 +19,27 @@ export const BeboTheme = createTheme({
     },
     typography: {
         subtitle1: {
-            fontFamily: "Titillium Web",
             fontWeight: 400,
             textTransform: "uppercase"
         },
+        subtitle2: {
+            marginBottom: 7,
+            fontSize: 17,
+            fontWeight: 600,
+            textTransform: "uppercase",
+        },
         h6: {
-            fontFamily: "Aldrich"
+            fontWeight: 300
+        },
+        h5: {
+            textTransform: "capitalize",
+            fontWeight: 600,
         },
         h3: {
-            fontFamily: "Titillium Web",
             textTransform: "uppercase",
             fontWeight: 300
         },
-        fontFamily: "Titillium Web"
+        fontFamily: 'Open Sans'
     },
     palette: {
         primary: {

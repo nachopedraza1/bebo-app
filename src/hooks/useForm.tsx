@@ -3,12 +3,12 @@ import { useCustomDispatch } from './useRedux';
 
 import { UploadImage, DisplayAlert } from '../Admin/Helpers';
 import { startLoadPost } from '../redux/thuks';
-import { Dayjs } from 'dayjs';
 
 import { addDoc, collection } from 'firebase/firestore/lite';
 import { FirebaseDB } from "../Firebase/config";
 
 import { SelectChangeEvent } from '@mui/material';
+import dayjs, { Dayjs } from 'dayjs';
 
 export const useForm = <T extends Object>(initialState: T) => {
 
@@ -40,7 +40,7 @@ export const useForm = <T extends Object>(initialState: T) => {
         try {
             const imgUrl = await UploadImage(imgFile);
             const queryRef = collection(FirebaseDB, "designs");
-            await addDoc(queryRef, { ...formState, imgUrl });
+            await addDoc(queryRef, { ...formState, imgUrl, createdAt: dayjs().unix() });
             dispatch(startLoadPost());
             setFormState(initialState);
             setSubmitted(false);

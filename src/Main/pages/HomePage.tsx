@@ -1,14 +1,14 @@
-import { Grid } from '@mui/material';
-import { LatestDesigns } from '../components/LatestDesigns';
-
+import { AdvertisingSlide, LatestDesigns } from '../components';
+import { Container, Grid } from '@mui/material';
 
 export const HomePage: React.FC = () => {
 
     return (
-        <Grid container>
-            <Grid item xs={12}>
+        <>
+            <AdvertisingSlide />
+            <Container>
                 <LatestDesigns />
-            </Grid>
-        </Grid>
+            </Container >
+        </>
     )
 }

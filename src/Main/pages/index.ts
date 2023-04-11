@@ -3,3 +3,4 @@ export * from "./HomePage";
 export * from "./DesignsPage";
 export * from "./ClientsPage";
 export * from "./PartnersPage";
+export * from "./ViewDesignPage";

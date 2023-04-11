@@ -24,7 +24,6 @@ export const startLogout = (): ThunkAction<void, RootState, unknown, AnyAction> 
 export const startLoadPost = (): ThunkAction<void, RootState, unknown, AnyAction> => {
     return async (dispatch) => {
         const posts = await getPosts();
-        console.log(posts);
         dispatch(loadPosts(posts))
     }
 }
