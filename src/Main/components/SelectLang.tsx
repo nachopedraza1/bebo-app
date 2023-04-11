@@ -3,7 +3,7 @@ import { styled } from '@mui/system';
 import { MenuItem, Select, SelectChangeEvent } from '@mui/material';
 
 export const SelectLang: React.FC = () => {
-    const [lang, setLang] = useState('sp');
+    const [lang, setLang] = useState('en');
 
     const handleChange = (event: SelectChangeEvent<any>) => {
         setLang(event.target.value);

@@ -20,7 +20,7 @@ export const LoginPage: React.FC = () => {
             bgcolor="#0f152a"
         >
             <Grid item textAlign="center">
-                <Typography variant="h6" color="white"> ADMIN PANEL </Typography>
+                <Typography color="white"> ADMIN PANEL </Typography>
                 <Button className="vs-btn" variant="text" endIcon={<Google />}
                     onClick={onLogin}>
                     INGRESAR CON GOOGLE

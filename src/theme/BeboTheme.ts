@@ -23,10 +23,10 @@ export const BeboTheme = createTheme({
             textTransform: "uppercase"
         },
         subtitle2: {
-            marginBottom: 7,
+            marginBottom: 6,
             fontSize: 17,
-            fontWeight: 600,
-            textTransform: "uppercase",
+            fontWeight: 700,
+            textTransform: "capitalize",
         },
         h6: {
             fontWeight: 300
@@ -36,7 +36,6 @@ export const BeboTheme = createTheme({
             fontWeight: 600,
         },
         h3: {
-            textTransform: "uppercase",
             fontWeight: 300
         },
         fontFamily: 'Open Sans'

@@ -8,29 +8,29 @@ export const LatestDesigns: React.FC = () => {
 
     return (
         <>
-            <Typography variant='h3' mt={5} fontSize={38}> Ultimos diseños </Typography>
+            <Typography variant='h3' mt={5} fontSize={45}> New designs </Typography>
             <Grid container justifyContent="space-between" mt={5}>
                 {posts.slice(0, 4).map(({ id, title, imgUrl, price }) => (
                     <Grid item className="item" xs={2.6} key={id}>
-                        <div className="i_info">
+                        <Box className="i_info">
                             <Typography variant='subtitle2'> {title} </Typography>
-                        </div>
-                        <div className="i_img">
+                        </Box>
+                        <Box className="i_img">
                             <img src={imgUrl} width="100%" />
-                        </div>
-                        <div className="i_hover">
-                            <Link to={`/product/${id}`}>
+                        </Box>
+                        <Box className="i_hover">
+                            <Link to={`/designs/${id}`}>
                                 <Button >buy</Button>
                             </Link>
-                        </div>
+                        </Box>
 
-                        <div className="file_types">
+                        <Box className="file_types">
                             <a href="/en/category/psd" className="psd"></a>
-                        </div>
+                        </Box>
 
-                        <div className="i_price">
+                        <Box className="i_price">
                             $ {price}
-                        </div>
+                        </Box>
                     </Grid>
                 ))}
             </Grid>
@@ -39,10 +39,3 @@ export const LatestDesigns: React.FC = () => {
         </>
     )
 }
-
-{/* <Grid item xs={2.6} key={id}>
-    <Typography variant='subtitle2'> {title} </Typography>
-    <Box className="hover-effect" width="240px" height="350px" overflow="hidden" borderRadius={1}>
-        <img src={imgUrl} alt="" width="100%" />
-    </Box>
-</Grid> */}

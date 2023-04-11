@@ -10,15 +10,17 @@ export const MainRoutes: React.FC = () => {
     return (
         <>
             <Navbar />
-            <Routes>
-                <Route path='/' element={<HomePage />} />
-                <Route path='/faq' element={<FaqPage />} />
-                <Route path='/design' element={<DesignsPage />} />
-                <Route path='/clients' element={<ClientsPage />} />
-                <Route path='/partners' element={<PartnersPage />} />
-                <Route path='/product/:designId' element={<ViewDesignPage />} />
-                <Route path='/*' element={<Navigate to="/" />} />
-            </Routes>
+            <Container>
+                <Routes>
+                    <Route path='/' element={<HomePage />} />
+                    <Route path='/faq' element={<FaqPage />} />
+                    <Route path='/designs' element={<DesignsPage />} />
+                    <Route path='/clients' element={<ClientsPage />} />
+                    <Route path='/partners' element={<PartnersPage />} />
+                    <Route path='/designs/:designId' element={<ViewDesignPage />} />
+                    <Route path='/*' element={<Navigate to="/" />} />
+                </Routes>
+            </Container>
         </>
     )
 }

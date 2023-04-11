@@ -1,3 +1,8 @@
+body::-webkit-scrollbar {
+    width: 0px;
+    background-color: #000000;
+}
+
 nav {
     position: relative;
 }
@@ -32,28 +37,28 @@ nav .start-home,
     left: 5px;
 }
 
-nav .start-diseños,
+nav .start-designs,
 .nav-link:nth-child(2) {
     width: 80px;
     left: 88px;
 }
 
-nav .start-blog,
+nav .start-clients,
 .nav-link:nth-child(3) {
-    width: 95px;
-    left: 185px;
+    width: 80px;
+    left: 186px;
 }
 
-nav .start-portfolio,
+nav .start-partners,
 .nav-link:nth-child(4) {
-    width: 105px;
-    left: 295px;
+    width: 95px;
+    left: 283px;
 }
 
-nav .start-contact,
+nav .start-faq,
 .nav-link:nth-child(5) {
     width: 60px;
-    left: 410px;
+    left: 388px;
 }
 
 .vs-btn {
@@ -182,6 +187,7 @@ nav .start-contact,
     font-weight: 600;
     margin-top: 10px;
 }
+
 
 .faq-box {
     border: 2px dashed #f1484c;
