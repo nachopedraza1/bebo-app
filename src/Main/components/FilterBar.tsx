@@ -1,33 +1,46 @@
-import styled from "@emotion/styled";
 import { FilterList } from "@mui/icons-material"
 import { Grid, Typography, Button, Divider, SelectChangeEvent, FormControl, InputLabel, Select, MenuItem } from '@mui/material';
 import { useState } from "react";
 
 
-const CustomButton = styled(Button)({
+const buttonStyles = {
     color: 'black',
     backgroundColor: '#0000003a',
     padding: "15px"
-});
+};
 
-const CustomSelect = styled(Select)({
+const selectStyle = {
     '.MuiSelect-outlined': {
         backgroundColor: "#0000003a",
-        color: "white",
-        padding: 3.5,
+        color: "balck",
+        padding: "4px 10px",
+        fontFamily: "Aldrich",
+        fontSize: 11,
+        textAlign: "start",
+        textTransform: "uppercase"
     },
-    "&.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline":
-    {
-        border: "1px solid #0000003a",
+    "&.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline": {
+        border: 0,
     },
-});
+};
 
 const labelStyle = {
     fontFamily: "Aldrich ",
     textTransform: "uppercase",
-    fontSize: 13,
+    fontSize: 11,
     color: "black",
 }
+
+const buttons = [
+    { id: 1, name: "All" },
+    { id: 2, name: "Logos" },
+    { id: 3, name: "Templates" },
+    { id: 4, name: "Launchers" },
+    { id: 5, name: "Templates" },
+    { id: 6, name: "Flyers" },
+    { id: 7, name: "Maps" },
+    { id: 8, name: "Selects" },
+];
 
 export const FilterBar: React.FC = () => {
 
@@ -48,36 +61,18 @@ export const FilterBar: React.FC = () => {
             </Grid>
             <Grid item >
                 <Grid container justifyContent="center" gap={1}>
-                    <CustomButton>
-                        All
-                    </CustomButton>
-                    <CustomButton>
-                        Logos
-                    </CustomButton>
-                    <CustomButton>
-                        Templates
-                    </CustomButton>
-                    <CustomButton>
-                        Launchers
-                    </CustomButton>
-                    <CustomButton>
-                        Templates
-                    </CustomButton>
-                    <CustomButton>
-                        Flyers
-                    </CustomButton>
-                    <CustomButton>
-                        Maps
-                    </CustomButton>
-                    <CustomButton>
-                        Selects
-                    </CustomButton>
+                    {buttons.map(({ id, name }) => (
+                        <Button key={id} sx={buttonStyles}>
+                            {name}
+                        </Button>
+                    ))}
                 </Grid>
             </Grid>
-            <Grid item xs={2}>
+            <Grid item xs={2} textAlign="end">
                 <FormControl sx={{ maxWidth: 120 }} fullWidth size="small">
                     <InputLabel sx={labelStyle}>Order by</InputLabel>
-                    <CustomSelect
+                    <Select
+                        sx={selectStyle}
                         variant="outlined"
                         value={age}
                         label="Order by"
@@ -86,7 +81,7 @@ export const FilterBar: React.FC = () => {
                         <MenuItem value={10}>Higher price</MenuItem>
                         <MenuItem value={20}>Lowest price</MenuItem>
                         <MenuItem value={20}>Most recent</MenuItem>
-                    </CustomSelect>
+                    </Select>
                 </FormControl>
             </Grid>
         </Grid>

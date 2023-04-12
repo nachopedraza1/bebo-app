@@ -1,6 +1,6 @@
-import { useParams, Link } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import { useCustomSelector } from "../../hooks";
-import { Divider, Grid, Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import { Breadcrumb, DetailsDesign, FileType, Payments } from "../components";
 
 
@@ -17,7 +17,7 @@ export const ViewDesignPage: React.FC = () => {
     return (
         <Grid container justifyContent="space-between">
 
-            <Breadcrumb {...post} />
+            <Breadcrumb  {...post} />
 
             <Grid item xs={7.4} >
                 <img src={imgUrl} width="100%" style={{ maxWidth: "700px", borderRadius: "5px" }} alt="" />
@@ -36,6 +36,6 @@ export const ViewDesignPage: React.FC = () => {
 
                 </Grid>
             </Grid>
-        </Grid>
+        </Grid >
     )
 }

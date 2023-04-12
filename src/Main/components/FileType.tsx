@@ -24,7 +24,7 @@ export const FileType: React.FC<Post> = ({ price }) => {
             <Grid container className="psd-box">
                 <Grid item xs={9} display="flex" alignItems="center">
                     <img src="/assets/psd.png" width={22} />
-                    <Typography variant="h5" fontSize={15} > PSD Layouts </Typography>
+                    <Typography variant="h5" fontSize={15} ml={1}> Editable PSD </Typography>
                 </Grid>
                 <Grid item xs={3}>
                     <Typography variant="h5" fontSize={24} fontWeight={400}> ${price}.00 </Typography>

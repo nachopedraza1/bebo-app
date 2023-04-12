@@ -25,6 +25,7 @@ export const Navbar: React.FC = () => {
     const { status, email } = useCustomSelector(state => state.auth);
 
     const [activeTab, setActiveTab] = useState<string>("");
+
     useEffect(() => {
         if (pathname === "/") return setActiveTab("start-home");
         if (pathname.includes("designs")) return setActiveTab("start-designs");
