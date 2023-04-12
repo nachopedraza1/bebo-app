@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import { FilterList } from "@mui/icons-material"
+import { FilterList, WhatsApp } from "@mui/icons-material"
 import { Grid, Typography, Button, Divider, SelectChangeEvent, FormControl, InputLabel, Select, MenuItem } from '@mui/material';
 import { useState } from "react";
 
@@ -74,7 +74,7 @@ export const FilterBar: React.FC = () => {
                     </CustomButton>
                 </Grid>
             </Grid>
-            <Grid item xs={2}>
+            <Grid item xs={2} textAlign="end">
                 <FormControl sx={{ maxWidth: 120 }} fullWidth size="small">
                     <InputLabel sx={labelStyle}>Order by</InputLabel>
                     <CustomSelect
@@ -82,8 +82,9 @@ export const FilterBar: React.FC = () => {
                         value={age}
                         label="Order by"
                         onChange={handleChange}
+
                     >
-                        <MenuItem value={10}>Higher price</MenuItem>
+                        <MenuItem value={10} >Higher price</MenuItem>
                         <MenuItem value={20}>Lowest price</MenuItem>
                         <MenuItem value={20}>Most recent</MenuItem>
                     </CustomSelect>
