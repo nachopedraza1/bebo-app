@@ -8,7 +8,7 @@ export const LatestDesigns: React.FC = () => {
 
     return (
         <>
-            <Typography variant='h3' mt={5} fontSize={45}> New designs </Typography>
+            <Typography variant='h3' mt={5} fontSize={45}> New Designs </Typography>
             <Grid container justifyContent="space-between" mt={5}>
                 {posts.slice(0, 4).map(({ id, title, imgUrl, price }) => (
                     <Grid item className="item" xs={2.6} key={id}>
@@ -34,8 +34,6 @@ export const LatestDesigns: React.FC = () => {
                     </Grid>
                 ))}
             </Grid>
-
-
         </>
     )
 }

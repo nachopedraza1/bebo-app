@@ -1,6 +1,11 @@
+import { Grid } from "@mui/material"
+import { FilterBar } from "../components"
 
 export const DesignsPage: React.FC = () => {
     return (
-        <div>DesignsPage</div>
+        <Grid container>
+            <FilterBar />
+        </Grid>
+
     )
 }

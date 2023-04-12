@@ -1,7 +1,15 @@
-import { createTheme } from "@mui/material";
+import { createTheme, CssBaseline } from '@mui/material';
 
 export const BeboTheme = createTheme({
     components: {
+        MuiCssBaseline: {
+            styleOverrides: `
+            body{
+                background-color: #E7EBF0;
+            }
+            `
+        }
+        ,
         MuiButton: {
             styleOverrides: {
                 root: {
@@ -34,6 +42,10 @@ export const BeboTheme = createTheme({
         h5: {
             textTransform: "capitalize",
             fontWeight: 600,
+        },
+        h4: {
+            fontFamily: "Aldrich",
+            fontSize: "17px"
         },
         h3: {
             fontWeight: 300
