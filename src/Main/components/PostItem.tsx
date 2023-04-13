@@ -1,21 +1,18 @@
 import { Link } from "react-router-dom"
+
+import { Image } from "./Imagen"
+
 import { Box, Button, Grid, Typography } from "@mui/material"
 import { Post } from "../../Interfaces/interfaces"
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-const PostItem: React.FC<Post> = ({ id, title, imgUrl, price }) => {
+export const PostItem: React.FC<Post> = ({ id, title, imgUrl, price }) => {
     return (
         <Grid item className="item" xs={2.6} key={id} mb={3}>
             <Box className="i_info">
                 <Typography variant='subtitle2'> {title} </Typography>
             </Box>
             <Box className="i_img" bgcolor="#200607">
-                <LazyLoadImage
-                    alt=""
-                    height="auto"
-                    effect="blur"
-                    src={imgUrl}
-                    width="100%" />
+                <Image imgUrl={imgUrl} />
             </Box>
             <Box className="i_hover">
                 <Link to={`/designs/${id}`}>
@@ -33,6 +30,4 @@ const PostItem: React.FC<Post> = ({ id, title, imgUrl, price }) => {
         </Grid>
     )
 }
-
-export default PostItem;
 

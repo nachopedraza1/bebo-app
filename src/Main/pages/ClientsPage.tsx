@@ -1,6 +1,9 @@
 
-export const ClientsPage: React.FC = () => {
+const ClientsPage: React.FC = () => {
+
     return (
         <div>ClientsPage</div>
     )
 }
+
+export default ClientsPage;

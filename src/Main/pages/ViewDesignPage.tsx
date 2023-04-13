@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom"
 import { useCustomSelector } from "../../hooks";
+import { Breadcrumb, DetailsDesign, FileType, Image, Payments } from "../components";
 import { Grid, Typography } from "@mui/material";
-import { Breadcrumb, DetailsDesign, FileType, Payments } from "../components";
 
 
-export const ViewDesignPage: React.FC = () => {
+const ViewDesignPage: React.FC = () => {
 
     const { designId } = useParams();
 
@@ -20,7 +20,7 @@ export const ViewDesignPage: React.FC = () => {
             <Breadcrumb  {...post} />
 
             <Grid item xs={7.4} >
-                <img src={imgUrl} width="100%" style={{ maxWidth: "700px", borderRadius: "5px" }} alt="" />
+                <Image imgUrl={imgUrl} />
             </Grid>
 
             <Grid item xs={4}>
@@ -39,3 +39,5 @@ export const ViewDesignPage: React.FC = () => {
         </Grid >
     )
 }
+
+export default ViewDesignPage;

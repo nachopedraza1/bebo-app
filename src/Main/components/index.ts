@@ -1,3 +1,4 @@
+export * from "./Imagen";
 export * from "./AdminCp";
 export * from "./Payments";
 export * from "./FileType";
