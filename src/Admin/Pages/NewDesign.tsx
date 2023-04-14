@@ -25,7 +25,7 @@ export const NewDesign: React.FC = () => {
                 <Grid container spacing={4}>
                     <Grid item xs={7}>
                         <Grid container alignItems="center" gap={1}>
-                            <Typography variant='subtitle1' fontSize={25}> Cargar nuevo Diseño </Typography>
+                            <Typography variant='h6' fontSize={30}> Cargar nuevo Diseño </Typography>
                             <CloudUpload fontSize='large' />
                         </Grid>
                         < Divider />
@@ -33,7 +33,7 @@ export const NewDesign: React.FC = () => {
 
                     <Grid item xs={5}>
                         <Grid container alignItems="center" gap={1}>
-                            <Typography variant='subtitle1' fontSize={25}> Vista previa </Typography>
+                            <Typography variant='h6' fontSize={30}> Vista previa </Typography>
                             <Visibility fontSize='large' />
                         </Grid>
                         < Divider />

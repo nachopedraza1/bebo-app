@@ -7,12 +7,11 @@ interface Select {
 
 const items = [
     { name: "Logos", value: "Logos" },
-    { name: "Mapas", value: "Mapas" },
+    { name: "Maps", value: "Maps" },
     { name: "Flyers", value: "Flyers" },
     { name: "Templates", value: "Templates" },
     { name: "Launchers", value: "Launchers" },
-    { name: "Select Server", value: "Select Server" },
-    { name: "Select Character", value: "Select Character" },
+    { name: "Selects", value: "Selects" },
 ]
 
 export const SelectCategory: React.FC<Select> = ({ category, onInputchange }) => {

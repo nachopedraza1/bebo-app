@@ -1,9 +1,11 @@
 import { useParams } from "react-router-dom"
 import { useCustomSelector } from "../../hooks";
+import { TransitionPage } from "../Layout/TransitionPage";
 import { Breadcrumb, DetailsDesign, FileType, Image, Payments } from "../components";
 import { Grid, Typography } from "@mui/material";
 
-const ViewDesignPage: React.FC = () => {
+
+export const ViewDesignPage: React.FC = () => {
 
     const { designId } = useParams();
 
@@ -14,6 +16,7 @@ const ViewDesignPage: React.FC = () => {
     const { imgUrl, title } = post;
 
     return (
+        <TransitionPage>
             <Grid container justifyContent="space-between">
 
                 <Breadcrumb  {...post} />
@@ -36,7 +39,6 @@ const ViewDesignPage: React.FC = () => {
                     </Grid>
                 </Grid>
             </Grid >
+        </TransitionPage>
     )
 }
-
-export default ViewDesignPage;

@@ -1,9 +1,7 @@
 
 
-const FaqPage: React.FC = () => {
+export const FaqPage: React.FC = () => {
     return (
         <div>FaqPage</div>
     )
 }
-
-export default FaqPage;
