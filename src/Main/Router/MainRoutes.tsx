@@ -29,7 +29,7 @@ export const MainRoutes: React.FC = () => {
                         <Route path='/*' element={<Navigate to="/" />} />
                     </Routes>
                 </Suspense>
-            </Container>
+            </Container >
         </>
     )
 }

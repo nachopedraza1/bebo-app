@@ -15,7 +15,6 @@ const DesignsPage: React.FC = () => {
                 ))}
             </Grid>
         </Grid>
-
     )
 }
 
