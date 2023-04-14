@@ -32,22 +32,25 @@ const labelStyle = {
 }
 
 const buttons = [
-    { id: 1, name: "All" },
-    { id: 2, name: "Logos" },
-    { id: 3, name: "Templates" },
-    { id: 4, name: "Launchers" },
-    { id: 5, name: "Templates" },
-    { id: 6, name: "Flyers" },
-    { id: 7, name: "Maps" },
-    { id: 8, name: "Selects" },
+    { id: 1, category: "All" },
+    { id: 2, category: "Logos" },
+    { id: 3, category: "Templates" },
+    { id: 4, category: "Launchers" },
+    { id: 5, category: "Flyers" },
+    { id: 6, category: "Maps" },
+    { id: 7, category: "Selects" },
 ];
 
-export const FilterBar: React.FC = () => {
+interface Filter {
+    onFilter: (categoryFilter: string, order?: string) => void;
+}
 
-    const [age, setAge] = useState('');
+export const FilterBar: React.FC<Filter> = ({ onFilter }) => {
+
+    const [orderBy, setOrderBy] = useState('');
 
     const handleChange = (event: SelectChangeEvent) => {
-        setAge(event.target.value);
+
     };
 
     return (
@@ -61,9 +64,9 @@ export const FilterBar: React.FC = () => {
             </Grid>
             <Grid item >
                 <Grid container justifyContent="center" gap={1}>
-                    {buttons.map(({ id, name }) => (
-                        <Button key={id} sx={buttonStyles}>
-                            {name}
+                    {buttons.map(({ id, category }) => (
+                        <Button key={id} sx={buttonStyles} onClick={() => onFilter(category)}>
+                            {category}
                         </Button>
                     ))}
                 </Grid>
@@ -74,14 +77,13 @@ export const FilterBar: React.FC = () => {
                     <Select
                         sx={selectStyle}
                         variant="outlined"
-                        value={age}
+                        value={orderBy}
                         label="Order by"
                         onChange={handleChange}
-
                     >
-                        <MenuItem value={10} >Higher price</MenuItem>
-                        <MenuItem value={20}>Lowest price</MenuItem>
-                        <MenuItem value={20}>Most recent</MenuItem>
+                        <MenuItem value="hprice">Higher price</MenuItem>
+                        <MenuItem value="lprice">Lowest price</MenuItem>
+                        <MenuItem value="mrecent">Most recent</MenuItem>
                     </Select>
                 </FormControl>
             </Grid>

@@ -235,3 +235,19 @@ nav .start-faq,
     margin-top: 15px;
     padding: 13px 10px;
 }
+
+.loading {
+    position: fixed;
+    width: 100%;
+    min-height: 100vh;
+    background-color: red;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.loading-fade {
+    opacity: 0;
+    transition: 1s all;
+    z-index: -1;
+}
