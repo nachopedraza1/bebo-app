@@ -19,7 +19,7 @@ export const DesignsPage: React.FC = () => {
         setPostFilter(filterPosts);
     }
 
-    const orderBy = (order: string) => {
+    const orderBy = (order: string): void => {
         const orderByPrice = postFilter.slice().sort((a, b): any => {
             const aPrice = parseFloat(a.price || "0");
             const bPrice = parseFloat(b.price || "0");

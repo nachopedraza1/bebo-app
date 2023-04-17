@@ -15,6 +15,7 @@ export const PostItem: React.FC<Post> = ({ id, category, title, imgUrl, price })
             <Box className="i_img" bgcolor="#200607">
                 <Image imgUrl={imgUrl} />
                 {category === "Free" && <span className="free-item"></span>}
+                {category === "Discounts" && <span className="disc-item"></span>}
             </Box>
             <Box className="i_hover">
                 <Link to={`/designs/${id}`}>

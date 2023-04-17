@@ -1,3 +1,5 @@
+
+
 body::-webkit-scrollbar {
     width: 0px;
     background-color: #000000;
@@ -129,6 +131,16 @@ nav .start-faq,
     border-radius: 0 0 3px 0;
 }
 
+.vs-btn .arrow {
+    transition: 0.3s all;
+}
+
+.vs-btn:hover .arrow {
+    transition: 0.3s all;
+    transform: rotate(-90deg);
+}
+
+
 
 .item {
     display: inline-block;
@@ -163,6 +175,17 @@ nav .start-faq,
         width: 73px;
         height: 73px;
         background-image: url(/assets/free.png);
+        background-size: 100%;
+        top: 31.5px;
+        left: -2px;
+        z-index: 1;
+    }
+
+    .disc-item {
+        position: absolute;
+        width: 73px;
+        height: 73px;
+        background-image: url(/assets/sale.png);
         background-size: 100%;
         top: 31.5px;
         left: -2px;

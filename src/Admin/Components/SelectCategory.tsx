@@ -13,6 +13,7 @@ const items = [
     { name: "Launchers", value: "Launchers" },
     { name: "Selects", value: "Selects" },
     { name: "Free", value: "Free" },
+    { name: "Discounts", value: "Discounts" },
 ]
 
 export const SelectCategory: React.FC<Select> = ({ category, onInputchange }) => {
