@@ -12,7 +12,7 @@ import { WhatsApp } from '@mui/icons-material';
 const navLinks = [
     { id: 1, text: "home", path: "/" },
     { id: 2, text: "designs", path: "/designs" },
-    { id: 3, text: "clients", path: "/clients" },
+    { id: 3, text: "terms", path: "/terms" },
     { id: 4, text: "partners", path: "/partners" },
     { id: 5, text: "faq", path: "/faq" },
 ];

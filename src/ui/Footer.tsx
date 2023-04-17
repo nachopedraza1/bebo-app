@@ -5,7 +5,7 @@ import { Grid, Divider, Container, Link, Typography } from '@mui/material';
 export const Footer: React.FC = () => {
     return (
         <>
-            <Container>
+            <Container sx={{ marginTop: 10 }}>
                 <Divider />
                 <Grid
                     container

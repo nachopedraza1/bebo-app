@@ -18,7 +18,7 @@ export const MainRoutes: React.FC = () => {
                     <Route path='/' element={<HomePage />} />
                     <Route path='/faq' element={<FaqPage />} />
                     <Route path='/designs' element={<DesignsPage />} />
-                    <Route path='/clients' element={<TermsPage />} />
+                    <Route path='/terms' element={<TermsPage />} />
                     <Route path='/partners' element={<PartnersPage />} />
                     <Route path='/designs/:designId' element={<ViewDesignPage />} />
                     <Route path='/*' element={<Navigate to="/" />} />
