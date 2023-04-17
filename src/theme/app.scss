@@ -61,6 +61,11 @@ nav .start-faq,
     left: 388px;
 }
 
+
+.slick-slider {
+    max-height: 88px;
+}
+
 .vs-btn {
     border: none;
     text-decoration: none;
@@ -152,6 +157,17 @@ nav .start-faq,
     img {
         border-radius: 4px;
     }
+
+    .free-item {
+        position: absolute;
+        width: 73px;
+        height: 73px;
+        background-image: url(/assets/free.png);
+        background-size: 100%;
+        top: 31.5px;
+        left: -2px;
+        z-index: 1;
+    }
 }
 
 .i_hover {
@@ -186,6 +202,25 @@ nav .start-faq,
     font-size: 22px;
     font-weight: 600;
     margin-top: 10px;
+}
+
+.file_types {
+    position: absolute;
+    right: 0px;
+    margin-top: 7px;
+    margin-bottom: -3px;
+
+    a {
+        display: block;
+        position: relative;
+        z-index: 4;
+        float: right;
+        width: 36px;
+        height: 36px;
+        margin-top: 4px;
+        background: url(/assets/psd.png) no-repeat;
+        background-size: 25px;
+    }
 }
 
 
@@ -250,4 +285,30 @@ nav .start-faq,
     opacity: 0;
     transition: 1s all;
     z-index: -1;
+}
+
+.footer img {
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: 0.3s all;
+    cursor: pointer;
+
+    &:hover {
+        filter: grayscale(0%);
+        opacity: 1;
+    }
+}
+
+.social-links {
+    padding: 25px;
+
+    svg {
+        transition: 0.3s all;
+        opacity: 0.5;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
 }

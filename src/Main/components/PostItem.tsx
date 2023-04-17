@@ -5,7 +5,8 @@ import { Image } from "./Imagen"
 import { Box, Button, Grid, Typography } from "@mui/material"
 import { Post } from "../../Interfaces/interfaces"
 
-export const PostItem: React.FC<Post> = ({ id, title, imgUrl, price }) => {
+export const PostItem: React.FC<Post> = ({ id, category, title, imgUrl, price }) => {
+
     return (
         <Grid item className="item" xs={2.6} key={id} mb={3}>
             <Box className="i_info">
@@ -13,6 +14,7 @@ export const PostItem: React.FC<Post> = ({ id, title, imgUrl, price }) => {
             </Box>
             <Box className="i_img" bgcolor="#200607">
                 <Image imgUrl={imgUrl} />
+                {category === "Free" && <span className="free-item"></span>}
             </Box>
             <Box className="i_hover">
                 <Link to={`/designs/${id}`}>
@@ -25,7 +27,7 @@ export const PostItem: React.FC<Post> = ({ id, title, imgUrl, price }) => {
             </Box>
 
             <Box className="i_price">
-                $ {price}
+                {price === "0" ? "Free" : `$ ${price}`}
             </Box>
         </Grid>
     )

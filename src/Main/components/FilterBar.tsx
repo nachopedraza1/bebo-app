@@ -39,6 +39,7 @@ const buttons = [
     { id: 5, category: "Flyers" },
     { id: 6, category: "Maps" },
     { id: 7, category: "Selects" },
+    { id: 8, category: "Free" },
 ];
 
 interface Filter {

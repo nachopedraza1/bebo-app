@@ -12,6 +12,7 @@ const items = [
     { name: "Templates", value: "Templates" },
     { name: "Launchers", value: "Launchers" },
     { name: "Selects", value: "Selects" },
+    { name: "Free", value: "Free" },
 ]
 
 export const SelectCategory: React.FC<Select> = ({ category, onInputchange }) => {

@@ -1,6 +1,6 @@
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 
-import { Navbar, Preloader } from '../../ui';
+import { Footer, Navbar, Preloader } from '../../ui';
 
 import { ClientsPage, DesignsPage, FaqPage, HomePage, PartnersPage, ViewDesignPage } from '../pages';
 import { AnimatePresence } from 'framer-motion';
@@ -24,6 +24,7 @@ export const MainRoutes: React.FC = () => {
                     <Route path='/*' element={<Navigate to="/" />} />
                 </Routes>
             </AnimatePresence>
+            <Footer />
         </>
     )
 }

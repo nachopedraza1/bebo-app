@@ -48,6 +48,7 @@ export const BeboTheme = createTheme({
             fontSize: "17px"
         },
         h3: {
+            fontFamily: "Chakra Petch",
             fontWeight: 300
         },
         fontFamily: 'Open Sans'

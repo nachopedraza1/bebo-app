@@ -1,14 +1,15 @@
 import { TransitionPage } from '../Layout/TransitionPage';
 import { LatestDesigns } from '../components';
-import { Grid } from '@mui/material';
+import { AdvertisingServers } from '../../ui';
 
 export const HomePage: React.FC = () => {
 
     return (
-        <TransitionPage>
-            <Grid container>
+        <>
+            <AdvertisingServers />
+            <TransitionPage>
                 <LatestDesigns />
-            </Grid >
-        </TransitionPage>
+            </TransitionPage >
+        </>
     )
 }

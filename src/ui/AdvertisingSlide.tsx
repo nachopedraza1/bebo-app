@@ -1,5 +1,5 @@
 import Slider from 'react-slick';
-import { Grid } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 
 const slides = [
     { imgUrl: "/assets/banner1.jpg" },
@@ -15,6 +15,8 @@ export const AdvertisingSlide: React.FC = () => {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 4000
     };
 
     return (
@@ -30,6 +32,6 @@ export const AdvertisingSlide: React.FC = () => {
                     </Grid>
                 ))}
             </Slider >
-        </div>
+        </div >
     )
 }

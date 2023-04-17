@@ -8,11 +8,13 @@ export const LatestDesigns: React.FC = () => {
 
     return (
         <>
-            <Typography variant='h3' mt={5} fontSize={45}> New Designs </Typography>
+            <Typography variant='h3' mt={5} fontSize={45} > New Designs </Typography>
             <Grid container justifyContent="space-between" mt={5}>
-                {posts.slice(0, 4).map(post => (
-                    <PostItem key={post.id}  {...post} />
-                ))}
+                {posts.filter(({ category }) => category != "Free")
+                    .slice(0, 4)
+                    .map(post => (
+                        <PostItem key={post.id}  {...post} />
+                    ))}
             </Grid >
         </>
     )
