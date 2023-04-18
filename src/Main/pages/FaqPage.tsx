@@ -46,6 +46,38 @@ export const FaqPage: React.FC = () => {
                     By purchasing any design from our store, you automatically accept the license agreement and terms of service.
                 </Typography>
 
+                <Typography fontSize={17} fontWeight={600}> 4. Does our store accept PayPal payments?</Typography>
+
+                <Typography > Yes, we accept payments from Paypal, you must make the purchase process normally and at the time of payment specify that you want to pay through paypal, we will provide the deposit email and you must send us the proof of payment. </Typography>
+
+                <Typography fontSize={17} fontWeight={600}> 5. What payment methods do you support?</Typography>
+
+                <Divider />
+                <Grid
+                    container
+                    justifyContent="space-between"
+                    alignItems="center"
+                    padding={2}
+                    gap={4}
+                >
+                    <img src="/assets/mp-logo.webp" width="110px" alt="" />
+                    <img src="/assets/logo-pp.png" width="120px" alt="" />
+                    <img src="/assets/logo-visa.png" width="75px" alt="" />
+                    <img src="/assets/logo-master.png" width="60px" alt="" />
+                    <img src="/assets/binance-logo.png" width="140px" alt="" />
+                    <img src="/assets/logo-wu.png" width="140px" alt="" />
+                </Grid>
+                <Divider />
+
+                <Typography fontSize={17} fontWeight={600}> 6. Template files delivery.</Typography>
+
+                <Typography> We currently work with manual processing of all orders. This means that for all payments from any platform, it is necessary to confirm the transaction in the form of a screenshot of your account statement with information about your purchase.
+                    Delivery is immediate upon receipt of proof of payment, with slight delays possible on weekends. Once payment is processed and confirmed, you will receive a link to download the design files. </Typography>
+
+                <Typography fontSize={17} fontWeight={600}> 7. Return policy.</Typography>
+
+                <Typography> Our store Bebodesign.com does not provide a return of digital goods after they are bought and delivered to your E-mail address. Refund is possible only in a case of delivering damaged or confused files and this is due to our fault. </Typography>
+
             </Grid>
 
         </TransitionPage>
