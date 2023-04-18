@@ -16,11 +16,6 @@ export const TransitionPage: React.FC<{ children: JSX.Element | JSX.Element[] }>
             animate="animate"
             exit="exit"
             transition={{ duration: 0.40 }}
-            onClick={() => window.scroll({
-                top: 0,
-                left: 0,
-                behavior: "smooth"
-            })}
         >
             <Container>
                 {children}

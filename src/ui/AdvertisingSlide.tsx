@@ -20,7 +20,7 @@ export const AdvertisingSlide: React.FC = () => {
     };
 
     return (
-        <div>
+        <div style={{ marginTop: 10.7}}>
             <Slider {...settings}>
                 {slides.map(({ imgUrl }) => (
                     <Grid container key={imgUrl} sx={{

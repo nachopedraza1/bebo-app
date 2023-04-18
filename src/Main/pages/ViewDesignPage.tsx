@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom"
 import { useCustomSelector } from "../../hooks";
 import { TransitionPage } from "../Layout/TransitionPage";
-import { Breadcrumb, DetailsDesign, FileType, Image, Payments } from "../components";
+import { Breadcrumb, BuyDesign, DetailsDesign, FileType, Image, Payments, Related } from "../components";
 import { Grid, Typography } from "@mui/material";
 
 
@@ -14,6 +14,8 @@ export const ViewDesignPage: React.FC = () => {
     const post = posts.find(({ id }) => id === designId) || {}
 
     const { imgUrl, title } = post;
+
+    const relatedPost = posts.filter(({ id, category }) => category === post.category && id != post.id);
 
     return (
         <TransitionPage>
@@ -36,8 +38,13 @@ export const ViewDesignPage: React.FC = () => {
 
                         <FileType {...post} />
 
+                        <Related relatedPost={relatedPost} />
+
                     </Grid>
                 </Grid>
+
+                <BuyDesign />
+
             </Grid >
         </TransitionPage>
     )

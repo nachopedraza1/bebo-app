@@ -6,7 +6,7 @@ import { useCustomSelector } from '../hooks';
 import { SelectLang, AdminCp } from '../Main/components';
 import { AdvertisingSlide } from "./AdvertisingSlide";
 
-import { Button, Container, Grid } from '@mui/material';
+import { AppBar, Button, Container, Grid, Slide, Toolbar, useScrollTrigger } from '@mui/material';
 import { WhatsApp } from '@mui/icons-material';
 
 const navLinks = [
@@ -17,8 +17,16 @@ const navLinks = [
     { id: 5, text: "faq", path: "/faq" },
 ];
 
+interface Props {
+    window?: () => Window;
+}
 
-export const Navbar: React.FC = () => {
+export const Navbar = (props: Props) => {
+
+    const { window } = props;
+    const trigger = useScrollTrigger({
+        target: window ? window() : undefined,
+    });
 
     const { pathname } = useLocation();
 
@@ -34,48 +42,52 @@ export const Navbar: React.FC = () => {
 
     return (
         <>
-            <Grid bgcolor="#0f152a" p={1}>
-                <Container maxWidth="lg">
-                    <Grid container justifyContent="space-between" alignItems="center">
+            <Slide appear={false} direction="down" in={!trigger}>
+                <AppBar>
+                    <Toolbar sx={{ padding: 1 }}>
+                        <Container maxWidth="lg">
+                            <Grid container justifyContent="space-between" alignItems="center">
 
-                        <Grid item>
-                            <Grid container alignItems="center" gap={3}>
-                                <img src="/assets/LOGOBEBO.png" width="50px" alt="" style={{ paddingTop: 5 }} />
-                                <nav>
-                                    {navLinks.map(({ id, path, text }) => (
-                                        <NavLink
-                                            to={path}
-                                            key={id}
-                                            className="nav-link"
-                                            style={({ isActive }) => { return { color: isActive ? "white" : "" } }}
-                                        >
-                                            {text}
-                                        </NavLink>
-                                    ))}
-                                    <div className={`${activeTab} animation`}></div>
-                                </nav>
+                                <Grid item>
+                                    <Grid container alignItems="center" gap={3}>
+                                        <img src="/assets/LOGOBEBO.png" width="50px" alt="" style={{ paddingTop: 5 }} />
+                                        <nav>
+                                            {navLinks.map(({ id, path, text }) => (
+                                                <NavLink
+                                                    to={path}
+                                                    key={id}
+                                                    className="nav-link"
+                                                    style={({ isActive }) => { return { color: isActive ? "white" : "" } }}
+                                                >
+                                                    {text}
+                                                </NavLink>
+                                            ))}
+                                            <div className={`${activeTab} animation`}></div>
+                                        </nav>
+                                    </Grid>
+                                </Grid>
+
+                                <Grid item>
+                                    <Grid container alignItems="center" gap={3} >
+                                        <SelectLang />
+
+                                        <Button className='vs-btn' variant='text' startIcon={<WhatsApp />}>
+                                            Contactanos!
+                                        </Button>
+
+                                    </Grid>
+                                </Grid>
+
                             </Grid>
-                        </Grid>
 
-                        <Grid item>
-                            <Grid container alignItems="center" gap={3} >
-                                <SelectLang />
-
-                                <Button className='vs-btn' variant='text' startIcon={<WhatsApp />}>
-                                    Contactanos!
-                                </Button>
-
-                            </Grid>
-                        </Grid>
-
-                    </Grid>
-
-                    {status === "authenticated"
-                        && email === "nachopedraza1905@gmail.com"
-                        ? <AdminCp /> : null}
-
-                </Container >
-            </Grid >
+                            {status === "authenticated"
+                                && email === "nachopedraza1905@gmail.com"
+                                ? <AdminCp /> : null}
+                        </Container >
+                    </Toolbar>
+                </AppBar>
+            </Slide>
+            <Toolbar />
             <AdvertisingSlide />
         </>
     )

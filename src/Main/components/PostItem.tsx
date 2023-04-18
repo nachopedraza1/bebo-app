@@ -24,7 +24,7 @@ export const PostItem: React.FC<Post> = ({ id, category, title, imgUrl, price })
             </Box>
 
             <Box className="file_types">
-                <a href="/en/category/psd" className="psd"></a>
+                <a className="psd"></a>
             </Box>
 
             <Box className="i_price">

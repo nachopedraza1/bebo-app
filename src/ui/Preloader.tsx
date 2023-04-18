@@ -1,5 +1,5 @@
-import { CircularProgress, Grid } from "@mui/material"
 import { useEffect, useState } from "react"
+import { Grid } from "@mui/material"
 
 export const Preloader: React.FC = () => {
 
@@ -8,7 +8,7 @@ export const Preloader: React.FC = () => {
     useEffect(() => {
         setTimeout(() => {
             setFadeClass('loading loading-fade')
-        }, 1500);
+        }, 3500);
         return setFadeClass('loading')
     }, [])
 
@@ -18,8 +18,9 @@ export const Preloader: React.FC = () => {
             className={fadeClass}
             justifyContent="center"
             alignItems="center"
+            bgcolor="#0f152a"
         >
-            <CircularProgress />
+            <img src="/assets/preloader.gif" width="150px" alt="" />
         </Grid>
     )
 }
