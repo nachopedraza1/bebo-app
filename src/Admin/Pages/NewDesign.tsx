@@ -1,8 +1,8 @@
 import { useForm } from '../../hooks';;
 
-import { Preview, SelectCategory, SelectDate, UploadImage } from '../Components';
+import { Preview, SelectCategory, SelectDate, UploadDemo, UploadImage } from '../Components';
 import { Grid, TextField, Typography, Divider, InputAdornment, Button } from '@mui/material';
-import { AttachMoney, CloudUpload, CreateOutlined, Visibility } from '@mui/icons-material';
+import { AttachMoney, CloudUpload, CreateOutlined, Visibility, YouTube } from '@mui/icons-material';
 import dayjs from 'dayjs';
 
 const formData = {
@@ -10,13 +10,14 @@ const formData = {
     date: dayjs().format('DD/MM/YYYY'),
     price: "",
     category: "",
+    urlVideo: ""
 }
 
 export const NewDesign: React.FC = () => {
 
     const { onSubmit, submitted, onSelectImage, formState, onInputchange, onDateChange } = useForm(formData);
 
-    const { category, price, title } = formState;
+    const { category, price, title, urlVideo } = formState;
 
     return (
         <form onSubmit={onSubmit}>
@@ -95,6 +96,14 @@ export const NewDesign: React.FC = () => {
                                         )
                                     }}
                                 />
+                            </Grid>
+
+                            <Grid item xs={12}>
+                                {
+                                    category === "Selects" || category === "Maps"
+                                        ? <UploadDemo onInputchange={onInputchange} urlVideo={urlVideo} />
+                                        : null
+                                }
                             </Grid>
 
                             <Grid item xs={12} textAlign="end">
