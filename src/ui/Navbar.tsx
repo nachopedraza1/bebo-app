@@ -71,7 +71,12 @@ export const Navbar = (props: Props) => {
                                     <Grid container alignItems="center" gap={3} >
                                         <SelectLang />
 
-                                        <Button className='vs-btn' variant='text' startIcon={<WhatsApp />}>
+                                        <Button
+                                            className='vs-btn'
+                                            href='https://wa.me/5493735539909'
+                                            target='_blank'
+                                            variant='text'
+                                            startIcon={<WhatsApp />}>
                                             Contactanos!
                                         </Button>
 

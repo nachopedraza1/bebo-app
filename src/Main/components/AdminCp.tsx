@@ -7,7 +7,7 @@ export const AdminCp: React.FC = () => {
         <IconButton
             component={Link}
             to="/admincp"
-            color='error'
+            color='secondary'
             sx={{
                 position: "absolute",
                 top: 17,

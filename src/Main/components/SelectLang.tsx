@@ -34,7 +34,7 @@ export const SelectLang: React.FC = () => {
             value={lang}
             onChange={handleChange}
         >
-            <MenuItem value="sp">
+            <MenuItem value="sp" disabled>
                 <img src="/assets/es.gif" style={{ marginRight: "7px" }} />
                 ES
             </MenuItem>

@@ -27,16 +27,16 @@ export const Footer: React.FC = () => {
                 <Grid container justifyContent="space-between" alignItems="center">
                     <Grid item xs={3}>
                         <Grid container alignItems="center" gap={1.7} className='social-links'>
-                            <Link href='/'>
+                            <Link href='https://www.youtube.com/channel/UClmjxTyiMGgLwd3XGZguTTw' target='_blank'>
                                 <YouTube sx={{ fontSize: "30px" }} />
                             </Link>
-                            <Link href='/' >
+                            <Link href='https://www.facebook.com/profile.php?id=100086009644249' target='_blank' >
                                 <FacebookRounded sx={{ fontSize: "25px" }} />
                             </Link>
-                            <Link href='/' >
-                                <Instagram sx={{ fontSize: "25px" }} />
+                            <Link href='https://discord.gg/ymumRax9xd' target='_blank' >
+                                <i className="fa-brands fa-discord" style={{ fontSize: "23px" }}></i>
                             </Link>
-                            <Link href='/' >
+                            <Link href='https://wa.me/5493735539909' target='_blank'>
                                 <WhatsApp sx={{ fontSize: "25px" }} />
                             </Link>
                         </Grid>

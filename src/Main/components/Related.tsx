@@ -19,9 +19,10 @@ export const Related: React.FC<{ relatedPost: Post[] }> = ({ relatedPost }) => {
                             </Box>
                         </Link>
                         <Typography noWrap fontWeight={600} mt={1} textTransform="capitalize"> {title} </Typography>
-                        <Typography fontWeight={600} color="#f1484c"> ${price}.00 </Typography>
+                        <Typography fontWeight={600} color="secondary">
+                            {price === "0" ? "Free" : `$ ${price}.00`}
+                        </Typography>
                     </Grid>
-                    
                 ))}
             </Grid>
         </Grid>

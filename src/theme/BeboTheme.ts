@@ -56,6 +56,9 @@ export const BeboTheme = createTheme({
     palette: {
         primary: {
             main: "#0f152a"
+        },
+        secondary: {
+            main: "#f1484c"
         }
     }
 });

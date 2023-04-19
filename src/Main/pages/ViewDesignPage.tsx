@@ -43,7 +43,7 @@ export const ViewDesignPage: React.FC = () => {
                     </Grid>
                 </Grid>
 
-                <BuyDesign />
+                <BuyDesign {...post} />
 
             </Grid >
         </TransitionPage>

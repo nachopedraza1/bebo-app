@@ -59,5 +59,6 @@ export const useForm = <T extends Object>(initialState: T) => {
         onDateChange,
         onSelectImage,
         onInputchange,
+        ...formState,
     }
 }
