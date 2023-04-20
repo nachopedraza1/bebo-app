@@ -58,12 +58,20 @@ export const FilterBar: React.FC<Filter> = ({ onFilter, orderBy }) => {
 
 
     return (
-        <Grid container className="filter-bar" justifyContent="space-between" alignItems="center">
-            <Grid item xs={2}>
+        <Grid container className="filter-bar" justifyContent={{ xs: "center", md: "space-between" }} alignItems="center">
+            <Grid item md={2} >
                 <Grid container alignItems="center" gap={2}>
                     <FilterList sx={{ fontSize: "30px" }} />
                     <Typography variant="h4"> FILTER </Typography>
-                    <Divider orientation="vertical" flexItem sx={{ bgcolor: "#0000003a", maxHeight: "25px", mt: "2px" }} />
+                    <Divider
+                        flexItem
+                        orientation="vertical"
+                        sx={{
+                            bgcolor: "#0000003a",
+                            maxHeight: "25px",
+                            display: { xs: "none", md: "flex" },
+                            mt: "2px",
+                        }} />
                 </Grid>
             </Grid>
             <Grid item >
@@ -75,7 +83,7 @@ export const FilterBar: React.FC<Filter> = ({ onFilter, orderBy }) => {
                     ))}
                 </Grid>
             </Grid>
-            <Grid item xs={2} textAlign="end">
+            <Grid item xs={2} textAlign="end" display={{ xs: "none", md: "block" }}>
                 <FormControl sx={{ maxWidth: 120 }} fullWidth size="small">
                     <InputLabel sx={labelStyle}>Order by</InputLabel>
                     <Select

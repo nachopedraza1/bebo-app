@@ -12,9 +12,9 @@ export const Related: React.FC<{ relatedPost: Post[] }> = ({ relatedPost }) => {
             <Grid container justifyContent="space-between" >
                 {relatedPost.slice(0, 2).map(({ id, imgUrl, title, price }) => (
 
-                    <Grid item xs={5.5} key={id}>
+                    <Grid item xs={5.7} key={id}>
                         <Link component={RouterLink} to={`/designs/${id}`} underline="none">
-                            <Box width="180px" height="150px" overflow="hidden" borderRadius={1}>
+                            <Box width="100%" height="150px" overflow="hidden" borderRadius={1}>
                                 <Image imgUrl={imgUrl} />
                             </Box>
                         </Link>

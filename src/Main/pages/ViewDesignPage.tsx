@@ -23,11 +23,11 @@ export const ViewDesignPage: React.FC = () => {
 
                 <Breadcrumb  {...post} />
 
-                <Grid item xs={7.4} >
+                <Grid item xs={12} md={7.4} >
                     <Image imgUrl={imgUrl} />
                 </Grid>
 
-                <Grid item xs={4}>
+                <Grid item xs={12} md={4}>
                     <Grid container direction="column" gap={3}>
 
                         <Typography variant="h5" fontSize={25}> {title} </Typography>
@@ -36,7 +36,7 @@ export const ViewDesignPage: React.FC = () => {
 
                         <DetailsDesign {...post} />
 
-                        {!!urlVideo && <ViewDemo urlVideo={urlVideo} />}
+                        {!!urlVideo && <ViewDemo {...post} />}
 
                         <FileType {...post} />
 

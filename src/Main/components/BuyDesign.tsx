@@ -32,7 +32,7 @@ export const BuyDesign: React.FC<Post> = ({ title, category, price, imgUrl }) =>
                 container
                 boxShadow="1px 2px 4px 4px rgba(0, 0, 0, 0.2),0px 4px 5px 4px rgba(0, 0, 0, 0.14),0px 1px 10px 4px rgba(0, 0, 0, 0.12)"
                 position="fixed"
-                height="120px"
+                minHeight="120px"
                 width="100%"
                 bgcolor="white"
                 zIndex={1}
@@ -40,7 +40,14 @@ export const BuyDesign: React.FC<Post> = ({ title, category, price, imgUrl }) =>
                 left={0}
             >
                 <Container>
-                    <Grid container height="100%" alignItems="center" justifyContent="space-between">
+                    <Grid
+                        container
+                        height="100%"
+                        gap={{ xs: 3, md: 0 }}
+                        alignItems="center"
+                        padding={{ xs: 2, md: 0 }}
+                        justifyContent={{ xs: "center", md: "space-between" }}
+                    >
 
                         <Grid item display="flex" gap={1.5}>
                             <InfoOutlined color="action" />
@@ -67,13 +74,13 @@ export const BuyDesign: React.FC<Post> = ({ title, category, price, imgUrl }) =>
                             </Grid>
                         </Grid>
 
-                        <Grid item >
+                        <Grid item display={{ xs: "none", md: "block" }}>
                             <Badge badgeContent={1} color="secondary">
                                 <LocalMallOutlined color="action" sx={{ fontSize: "40px" }} />
                             </Badge>
                         </Grid>
 
-                        <Grid item display="flex" alignItems="center" gap={3}>
+                        <Grid item display="flex" alignItems="center" gap={4}>
                             <Grid>
                                 <Typography textAlign="end" fontSize={15}> Total sum: </Typography>
                                 <Typography color="#49b455" fontSize={29} lineHeight={1}>

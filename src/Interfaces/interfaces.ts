@@ -5,7 +5,8 @@ export interface Post {
     price?: string,
     title?: string,
     category?: string,
-    urlVideo?: string
+    urlVideo?: string,
+    description?: string,
 }
 
 export interface PostState {

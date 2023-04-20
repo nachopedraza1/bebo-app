@@ -10,14 +10,15 @@ const formData = {
     date: dayjs().format('DD/MM/YYYY'),
     price: "",
     category: "",
-    urlVideo: ""
+    urlVideo: "",
+    description: "",
 }
 
 export const NewDesign: React.FC = () => {
 
     const { onSubmit, submitted, onSelectImage, formState, onInputchange, onDateChange } = useForm(formData);
 
-    const { category, price, title, urlVideo } = formState;
+    const { category, description, price, title, urlVideo } = formState;
 
     return (
         <form onSubmit={onSubmit}>
@@ -99,11 +100,27 @@ export const NewDesign: React.FC = () => {
                             </Grid>
 
                             <Grid item xs={12}>
-                                {
-                                    category === "Selects" || category === "Maps"
-                                        ? <UploadDemo onInputchange={onInputchange} urlVideo={urlVideo} />
-                                        : null
-                                }
+                                {category === "Selects" || category === "Maps"
+                                    ? <UploadDemo onInputchange={onInputchange} urlVideo={urlVideo} />
+                                    : null}
+                            </Grid>
+
+                            <Grid item xs={12}>
+                                {category === "Selects" || category === "Maps"
+                                    ? <TextField
+                                        required
+                                        multiline
+                                        fullWidth
+                                        rows={4}
+                                        variant='outlined'
+                                        name='description'
+                                        label="Descripcion"
+                                        type='text'
+                                        value={description}
+                                        onChange={onInputchange}
+                                        placeholder='ingrese una Descripcion'
+                                    />
+                                    : null}
                             </Grid>
 
                             <Grid item xs={12} textAlign="end">

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { YoutubeEmbed } from "./YoutubeEmbed";
 import { Backdrop, Box, Button, Divider, Fade, Modal, Typography } from "@mui/material"
 import { Visibility } from "@mui/icons-material"
+import { Post } from "../../Interfaces/interfaces";
 
 
 const ButtonStyle = {
@@ -17,7 +18,7 @@ const style = {
     width: "min-content",
 };
 
-export const ViewDemo: React.FC<{ urlVideo: string }> = ({ urlVideo }) => {
+export const ViewDemo: React.FC<Post> = ({ description, urlVideo = "" }) => {
 
 
     const [open, setOpen] = useState(false);
@@ -37,7 +38,7 @@ export const ViewDemo: React.FC<{ urlVideo: string }> = ({ urlVideo }) => {
             </Button>
             <Divider />
             <Typography fontSize={13}>
-                Wonderful gaming design template for Aion server website made in cold purple and blue color theme with many cool dynamic effects and detalized ui elements. Homepage have many information blocks and module design for viewing all info about your server
+                {description}
             </Typography>
 
             <Modal

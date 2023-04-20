@@ -16,7 +16,7 @@ export const Breadcrumb: React.FC<Post> = ({ title, category }) => {
         >
             {category}
         </Typography>,
-        <Typography key="3" color="text.primary" textTransform="capitalize">
+        <Typography key="3" color="text.primary" textTransform="capitalize" noWrap>
             {title}
         </Typography>,
     ];
@@ -25,7 +25,7 @@ export const Breadcrumb: React.FC<Post> = ({ title, category }) => {
         <Grid container alignItems="center" color="#8c8c8c" p="50px 0px">
             <Stack spacing={2}>
                 <Breadcrumbs
-                    separator={<NavigateNext fontSize="small" sx={{ mx: 2 }} />}
+                    separator={<NavigateNext fontSize="small" sx={{ mx: { xs: 0, md: 2, } }} />}
                 >
                     {breadcrumbs}
                 </Breadcrumbs>

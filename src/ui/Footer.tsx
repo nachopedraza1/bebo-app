@@ -10,7 +10,7 @@ export const Footer: React.FC = () => {
                 <Grid
                     container
                     className='footer'
-                    justifyContent="space-between"
+                    justifyContent={{ xs: "center", md: "space-between" }}
                     alignItems="center"
                     padding={4}
                     gap={4}
@@ -25,8 +25,8 @@ export const Footer: React.FC = () => {
                 <Divider />
 
                 <Grid container justifyContent="space-between" alignItems="center">
-                    <Grid item xs={3}>
-                        <Grid container alignItems="center" gap={1.7} className='social-links'>
+                    <Grid item xs={12} md={3}>
+                        <Grid container justifyContent={{ xs: "center", md: "start" }} alignItems="center" gap={1.7} className='social-links'>
                             <Link href='https://www.youtube.com/channel/UClmjxTyiMGgLwd3XGZguTTw' target='_blank'>
                                 <YouTube sx={{ fontSize: "30px" }} />
                             </Link>
@@ -43,7 +43,7 @@ export const Footer: React.FC = () => {
                     </Grid>
 
                     <Grid item>
-                        <Typography color="#8d9294"> © 2018 - 2023 Bebodesign.com. All rights reserved. </Typography>
+                        <Typography color="#8d9294" textAlign="center"> © 2018 - 2023 Bebodesign.com. All rights reserved. </Typography>
                     </Grid>
                 </Grid>
 

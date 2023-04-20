@@ -17,14 +17,20 @@ export const LatestDesigns: React.FC = () => {
     return (
         <>
             <Grid container justifyContent="space-between" alignItems="center" mt={4} mb={2}>
-                <Grid item xs={4}>
+                <Grid item md={4}>
                     <Typography variant='h3' fontSize={45} > New Designs </Typography>
                 </Grid>
-                <Link to="/designs" style={{ textDecoration: "none" }}>
-                    <Button sx={buttonStyles} className='vs-btn' endIcon={<KeyboardArrowDown className="arrow" />}>
-                        ver mas
-                    </Button>
-                </Link>
+                <Grid sx={{ display: { xs: "none", sm: "flex" } }}>
+                    <Link to="/designs" style={{ textDecoration: "none" }}>
+                        <Button
+                            sx={buttonStyles}
+                            className='vs-btn'
+                            endIcon={<KeyboardArrowDown className="arrow" />}
+                        >
+                            ver mas
+                        </Button>
+                    </Link>
+                </Grid>
             </Grid>
             <Divider />
             <Grid container justifyContent="space-between" mt={4}>
@@ -37,14 +43,20 @@ export const LatestDesigns: React.FC = () => {
 
 
             <Grid container justifyContent="space-between" alignItems="center" mt={4} mb={2}>
-                <Grid item xs={4}>
+                <Grid item md={4}>
                     <Typography variant='h3' fontSize={45} > Discounts Designs</Typography>
                 </Grid>
-                <Link to="/designs" style={{ textDecoration: "none" }}>
-                    <Button sx={buttonStyles} className='vs-btn' endIcon={<KeyboardArrowDown className="arrow" />}>
-                        ver mas
-                    </Button>
-                </Link>
+                <Grid sx={{ display: { xs: "none", sm: "flex" } }}>
+                    <Link to="/designs" style={{ textDecoration: "none" }}>
+                        <Button
+                            sx={buttonStyles}
+                            className='vs-btn'
+                            endIcon={<KeyboardArrowDown className="arrow" />}
+                        >
+                            ver mas
+                        </Button>
+                    </Link>
+                </Grid>
             </Grid>
             <Divider />
             <Grid container justifyContent="space-between" mt={4}>
@@ -56,14 +68,20 @@ export const LatestDesigns: React.FC = () => {
             </Grid >
 
             <Grid container justifyContent="space-between" alignItems="center" mt={4} mb={2}>
-                <Grid item xs={4}>
+                <Grid item md={4}>
                     <Typography variant='h3' fontSize={45} > Free Designs </Typography>
                 </Grid>
-                <Link to="/designs" style={{ textDecoration: "none" }}>
-                    <Button sx={buttonStyles} className='vs-btn' endIcon={<KeyboardArrowDown className="arrow" />}>
-                        ver mas
-                    </Button>
-                </Link>
+                <Grid sx={{ display: { xs: "none", sm: "flex" } }}>
+                    <Link to="/designs" style={{ textDecoration: "none" }}>
+                        <Button
+                            sx={buttonStyles}
+                            className='vs-btn'
+                            endIcon={<KeyboardArrowDown className="arrow" />}
+                        >
+                            ver mas
+                        </Button>
+                    </Link>
+                </Grid>
             </Grid>
             <Divider />
             <Grid container justifyContent="space-between" mt={4}>

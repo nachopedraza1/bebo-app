@@ -1,5 +1,5 @@
 import Slider from 'react-slick';
-import { Container, Grid } from "@mui/material";
+import { Grid } from "@mui/material";
 
 const slides = [
     { imgUrl: "/assets/banner1.jpg" },
@@ -20,7 +20,7 @@ export const AdvertisingSlide: React.FC = () => {
     };
 
     return (
-        <div style={{ marginTop: 10.7}}>
+        <Grid sx={{ marginTop: 1, display: { xs: "none", md: "block" } }} >
             <Slider {...settings}>
                 {slides.map(({ imgUrl }) => (
                     <Grid container key={imgUrl} sx={{
@@ -32,6 +32,6 @@ export const AdvertisingSlide: React.FC = () => {
                     </Grid>
                 ))}
             </Slider >
-        </div >
+        </Grid >
     )
 }

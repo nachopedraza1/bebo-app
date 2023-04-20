@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 
-import { Footer, Navbar } from '../../ui';
+import { Footer, Header } from '../../ui';
 
 import { TermsPage, DesignsPage, FaqPage, HomePage, PartnersPage, ViewDesignPage } from '../pages';
 import { AnimatePresence } from 'framer-motion';
@@ -20,7 +20,7 @@ export const MainRoutes: React.FC = () => {
 
     return (
         <>
-            <Navbar />
+            <Header />
             <AnimatePresence mode='wait'>
                 <Routes key={location.pathname} location={location}>
                     <Route path='/' element={<HomePage />} />

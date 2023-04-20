@@ -17,29 +17,29 @@ export const AdvertisingServers: React.FC = () => {
             exit="exit"
             transition={{ duration: 0.40 }}
         >
-            <Grid container>
-                <Grid item xs={3}>
+            <Grid container mt={{ xs: 1.2, sm: 0.9, md: 0 }}>
+                <Grid item xs={6} md={3}>
                     <img src="/assets/instinto.gif" width="100%" height="100%" alt="" />
                 </Grid>
-                <Grid item xs={3}>
+                <Grid item xs={6} md={3}>
                     <img src="/assets/osma.gif" width="100%" height="100%" alt="" />
                 </Grid>
-                <Grid item xs={3}>
+                <Grid item xs={6} md={3}>
                     <img src="/assets/mugp.gif" width="100%" height="100%" alt="" />
                 </Grid>
-                <Grid item xs={3}>
+                <Grid item xs={6} md={3}>
                     <img src="/assets/magdalenax.gif" width="100%" height="100%" alt="" />
                 </Grid>
             </Grid>
 
-            <Grid container>
-                <Grid item xs={4}>
+            <Grid container justifyContent="center">
+                <Grid item xs={6} md={4}>
                     <img src="/assets/3rd1.gif" width="100%" height="100%" alt="" />
                 </Grid>
-                <Grid item xs={4}>
+                <Grid item xs={6} md={4}>
                     <img src="/assets/3rd3.gif" width="100%" height="100%" alt="" />
                 </Grid>
-                <Grid item xs={4}>
+                <Grid item xs={6} md={4}>
                     <img src="/assets/3rd2.gif" width="100%" height="100%" alt="" />
                 </Grid>
             </Grid>
