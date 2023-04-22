@@ -46,8 +46,10 @@ export const Footer: React.FC = () => {
                         <Typography color="#8d9294" textAlign="center"> © 2018 - 2023 Bebodesign.com. All rights reserved. </Typography>
                     </Grid>
                 </Grid>
-
             </Container>
+            <Grid container>
+
+            </Grid>
         </>
     )
 }
