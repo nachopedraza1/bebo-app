@@ -37,7 +37,7 @@ export const DesignsPage: React.FC = () => {
         <TransitionPage>
             <Grid container>
                 <FilterBar onFilter={onFilter} orderBy={orderBy} />
-                <Grid container justifyContent="space-between" mt={5}>
+                <Grid container gap={5.9} mt={5}>
                     {postFilter.map(post => (
                         <PostItem key={post.id}  {...post} />
                     ))}

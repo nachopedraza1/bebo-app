@@ -43,7 +43,7 @@ export const Footer: React.FC = () => {
                     </Grid>
 
                     <Grid item>
-                        <Typography color="#8d9294" textAlign="center"> © 2018 - 2023 Bebodesign.com. All rights reserved. </Typography>
+                        <Typography color="#8d9294" textAlign="center"> © 2023 - 2025 bebomarket.com.ar. All rights reserved. </Typography>
                     </Grid>
                 </Grid>
             </Container>

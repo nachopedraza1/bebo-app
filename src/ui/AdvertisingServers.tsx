@@ -20,29 +20,29 @@ export const AdvertisingServers: React.FC = () => {
         >
             <Grid container mt={{ xs: 1.2, sm: 0.9, md: 0 }}>
                 <Grid item xs={6} md={3}>
-                    <Image imgUrl="/assets/slotfreesmall.gif" height="100%" borderRadius="0px" />
+                    <Image imgUrl="/assets/slotfreesmall1.gif" height="100%" borderRadius="0px" />
                 </Grid>
                 <Grid item xs={6} md={3}>
-                    <Image imgUrl="/assets/slotfreesmall.gif" height="100%" borderRadius="0px" />
+                    <Image imgUrl="/assets/slotfreesmall2.gif" height="100%" borderRadius="0px" />
                 </Grid>
                 <Grid item xs={6} md={3}>
-                    <Image imgUrl="/assets/slotfreesmall.gif" height="100%" borderRadius="0px" />
+                    <Image imgUrl="/assets/slotfreesmall3.gif" height="100%" borderRadius="0px" />
 
                 </Grid>
                 <Grid item xs={6} md={3}>
-                    <Image imgUrl="/assets/slotfreesmall.gif" height="100%" borderRadius="0px" />
+                    <Image imgUrl="/assets/slotfreesmall4.gif" height="100%" borderRadius="0px" />
                 </Grid>
             </Grid>
 
             <Grid container justifyContent="center">
                 <Grid item xs={6} md={4}>
-                    <Image imgUrl="/assets/slotfreebig.gif" height="100%" borderRadius="0px" />
+                    <Image imgUrl="/assets/slotfreebig1.gif" height="100%" borderRadius="0px" />
                 </Grid>
                 <Grid item xs={6} md={4}>
-                    <Image imgUrl="/assets/slotfreebig.gif" height="100%" borderRadius="0px" />
+                    <Image imgUrl="/assets/slotfreebig2.gif" height="100%" borderRadius="0px" />
                 </Grid>
                 <Grid item xs={6} md={4}>
-                    <Image imgUrl="/assets/slotfreebig.gif" height="100%" borderRadius="0px" />
+                    <Image imgUrl="/assets/slotfreebig3.gif" height="100%" borderRadius="0px" />
                 </Grid>
             </Grid>
         </motion.div>

@@ -5,7 +5,7 @@ import "../src/theme/app.scss";
 import { useEffect } from 'react';
 import { useCustomDispatch } from "./hooks";
 import { startLoadPost } from "./redux/thuks";
-import { AppRouter } from "./Routes/AppRouter"
+import { AppRouter } from "./routes/AppRouter";
 
 export const App: React.FC = () => {
 

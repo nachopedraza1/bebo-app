@@ -75,6 +75,7 @@ export const Navbar: React.FC = () => {
             {
                 status === "authenticated"
                     && email === "nachopedraza1905@gmail.com"
+                    || email === "bebo_e20@hotmail.com"
                     ? <AdminCp /> : null
             }
         </>

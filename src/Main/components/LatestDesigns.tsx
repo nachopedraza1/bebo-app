@@ -33,7 +33,7 @@ export const LatestDesigns: React.FC = () => {
                 </Grid>
             </Grid>
             <Divider />
-            <Grid container justifyContent="space-between" mt={4}>
+            <Grid container gap={5.9} mt={4}>
                 {posts.filter(({ category }) => category != "Free" && category != "Discounts")
                     .slice(0, 4)
                     .map(post => (
@@ -59,7 +59,7 @@ export const LatestDesigns: React.FC = () => {
                 </Grid>
             </Grid>
             <Divider />
-            <Grid container justifyContent="space-between" mt={4}>
+            <Grid container gap={5.9} mt={4}>
                 {posts.filter(({ category }) => category === "Discounts")
                     .slice(0, 4)
                     .map(post => (
@@ -84,7 +84,7 @@ export const LatestDesigns: React.FC = () => {
                 </Grid>
             </Grid>
             <Divider />
-            <Grid container justifyContent="space-between" mt={4}>
+            <Grid container gap={5.9} mt={4}>
                 {posts.filter(({ category }) => category === "Free")
                     .slice(0, 4)
                     .map(post => (

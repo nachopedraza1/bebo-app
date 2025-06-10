@@ -30,9 +30,9 @@ export const FaqPage: React.FC = () => {
             <Divider />
 
             <Grid container direction="column" mt={2} gap={2}>
-                <Typography fontSize={17} fontWeight={600}> 1. What is Bebodesign.com? </Typography>
+                <Typography fontSize={17} fontWeight={600}> 1. What is bebomarket.com.ar? </Typography>
 
-                <Typography > Bebodesign.com is a store of unique and high quality Mu Online themed designs. Our store unlike others does not work as an intermediary between customer / author, all designs that you will find on the web are created exclusively by the team of bebodesign.com, so we offer a guaranteed support and the best experience for all our customers. </Typography>
+                <Typography > bebomarket.com.ar is a store of unique and high quality Mu Online themed designs. Our store unlike others does not work as an intermediary between customer / author, all designs that you will find on the web are created exclusively by the team of bebomarket.com.ar, so we offer a guaranteed support and the best experience for all our customers. </Typography>
 
                 <Typography fontSize={17} fontWeight={600}> 2. Template categories and filters. </Typography>
 
@@ -76,7 +76,7 @@ export const FaqPage: React.FC = () => {
 
                 <Typography fontSize={17} fontWeight={600}> 7. Return policy.</Typography>
 
-                <Typography> Our store Bebodesign.com does not provide a return of digital goods after they are bought and delivered to your E-mail address. Refund is possible only in a case of delivering damaged or confused files and this is due to our fault. </Typography>
+                <Typography> Our store bebomarket.com.ar does not provide a return of digital goods after they are bought and delivered to your E-mail address. Refund is possible only in a case of delivering damaged or confused files and this is due to our fault. </Typography>
 
             </Grid>
 
